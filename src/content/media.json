@@ -1,5 +1,38 @@
 [
   {
+    "id": "entrada-gaia-101",
+    "src800": "/media/site/entrada-gaia-101-2026.jpeg",
+    "src1600": "/media/site/entrada-gaia-101-2026.jpeg",
+    "alt": "Entrada da Gaia Vida Ainda na Rua do Amapá, 101, em Curitiba.",
+    "caption": "Entrada da Gaia",
+    "category": "fachada",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "fotografia de 2026 da entrada com placa e número 101"
+  },
+  {
+    "id": "fachada-lateral-jardim",
+    "src800": "/media/site/fachada-lateral-jardim-2026.jpeg",
+    "src1600": "/media/site/fachada-lateral-jardim-2026.jpeg",
+    "alt": "Fachada lateral da Gaia com jardim e céu aberto.",
+    "caption": "Fachada e jardim",
+    "category": "fachada",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "fotografia de 2026 da fachada lateral e gramado"
+  },
+  {
+    "id": "fachada-frontal-jardim",
+    "src800": "/media/site/fachada-frontal-jardim-2026.jpeg",
+    "src1600": "/media/site/fachada-frontal-jardim-2026.jpeg",
+    "alt": "Fachada frontal da Gaia e seu jardim.",
+    "caption": "Fachada frontal",
+    "category": "fachada",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "fotografia de 2026 da fachada frontal e jardim"
+  },
+  {
     "id": "fachada",
     "src800": "/media/site/fachada-800.webp",
     "src1600": "/media/site/fachada-1600.webp",
