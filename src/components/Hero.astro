@@ -15,15 +15,13 @@ import site from "../content/site.json";
     <div class="button-group">
       <a class="button button-primary" href="/contato/" data-event="hero_agendar">{site.hero.primaryCta}</a>
       <a
-        class="button button-outline-light"
+        class="button button-whatsapp"
         href={`https://wa.me/${site.contact.whatsappDigits}?text=${encodeURIComponent("Olá! Gostaria de conhecer melhor a Gaia e agendar uma visita.")}`}
         target="_blank"
         rel="noreferrer"
         data-event="hero_whatsapp"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.8 11.66c-.26-.13-1.56-.77-1.8-.86-.24-.09-.42-.13-.6.13-.18.26-.69.86-.85 1.04-.15.18-.31.2-.57.07-.26-.13-1.11-.41-2.11-1.3-.78-.7-1.31-1.56-1.46-1.82-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.97.95-.97 2.31s.99 2.68 1.13 2.87c.14.19 1.95 2.98 4.73 4.18.66.29 1.18.46 1.58.59.66.21 1.27.18 1.75.11.53-.08 1.56-.64 1.78-1.25.22-.61.22-1.14.15-1.25-.06-.11-.23-.18-.49-.31z"/>
-        </svg>
+        <img src="/icons/whatsapp-enviado.png" alt="" aria-hidden="true" width="26" height="26" class="button-whatsapp-icon" />
         <span>{site.hero.secondaryCta}</span>
       </a>
     </div>
