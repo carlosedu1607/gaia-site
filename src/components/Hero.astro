@@ -1,0 +1,26 @@
+---
+import site from "../content/site.json";
+---
+
+<section class="hero">
+  <picture class="hero-media">
+    <source media="(max-width: 800px)" srcset="/media/site/fachada-800.webp" />
+    <img src="/media/site/fachada-1600.webp" alt="Fachada atual da Gaia Vida Ainda em Curitiba" width="1280" height="960" fetchpriority="high" />
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <p class="eyebrow light">{site.hero.eyebrow}</p>
+    <h1>{site.hero.title}</h1>
+    <p>{site.hero.text}</p>
+    <div class="button-group">
+      <a class="button button-primary" href="/contato/" data-event="hero_agendar">{site.hero.primaryCta}</a>
+      <a
+        class="button button-outline-light"
+        href={`https://wa.me/${site.contact.whatsappDigits}?text=${encodeURIComponent("Olá! Gostaria de conhecer melhor a Gaia e agendar uma visita.")}`}
+        target="_blank"
+        rel="noreferrer"
+        data-event="hero_whatsapp"
+      >{site.hero.secondaryCta}</a>
+    </div>
+  </div>
+</section>

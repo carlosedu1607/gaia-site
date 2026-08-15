@@ -1,0 +1,57 @@
+[
+  {
+    "id": "fachada",
+    "src800": "/media/site/fachada-800.webp",
+    "src1600": "/media/site/fachada-1600.webp",
+    "alt": "Fachada atual da Gaia Vida Ainda no bairro Vista Alegre, em Curitiba",
+    "caption": "Fachada da Gaia",
+    "category": "fachada",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "confirmar se esta continua sendo a melhor foto principal"
+  },
+  {
+    "id": "patio",
+    "src800": "/media/site/patio-800.webp",
+    "src1600": "/media/site/patio-1600.webp",
+    "alt": "Pátio externo da Gaia com mesas, circulação e área de convivência",
+    "caption": "Área externa e convivência",
+    "category": "area-externa",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "confirmar atualidade do ambiente"
+  },
+  {
+    "id": "sala",
+    "src800": "/media/site/sala-800.webp",
+    "src1600": "/media/site/sala-1600.webp",
+    "alt": "Sala de convivência da Gaia com sofás e poltronas",
+    "caption": "Sala de convivência",
+    "category": "area-interna",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "confirmar atualidade do ambiente"
+  },
+  {
+    "id": "quarto-duplo",
+    "src800": "/media/site/quarto-duplo-800.webp",
+    "src1600": "/media/site/quarto-duplo-1600.webp",
+    "alt": "Quarto duplo da Gaia com duas camas e armário",
+    "caption": "Acomodação dupla",
+    "category": "quarto",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "confirmar itens oferecidos e categoria do quarto"
+  },
+  {
+    "id": "banheiro-acessivel",
+    "src800": "/media/site/banheiro-acessivel-800.webp",
+    "src1600": "/media/site/banheiro-acessivel-1600.webp",
+    "alt": "Banheiro da Gaia equipado com barras de apoio e cadeira de banho",
+    "caption": "Banheiro com recursos de apoio",
+    "category": "acessibilidade",
+    "enabled": true,
+    "authorization": "sem pessoas identificáveis",
+    "review": "validar quais recursos de acessibilidade podem ser divulgados"
+  }
+]

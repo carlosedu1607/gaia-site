@@ -1,0 +1,22 @@
+---
+import site from "../content/site.json";
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Gaia Vida Ainda — início">
+      <img src="/brand/logo-gaia.png" alt="Gaia Vida Ainda" width="194" height="66" />
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      {site.navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <a class="button button-primary header-cta" href="/contato/">Agendar uma visita</a>
+    <details class="mobile-menu">
+      <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
+      <nav aria-label="Navegação móvel">
+        {site.navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+        <a class="button button-primary" href="/contato/">Agendar uma visita</a>
+      </nav>
+    </details>
+  </div>
+</header>

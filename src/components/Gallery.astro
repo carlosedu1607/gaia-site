@@ -1,0 +1,44 @@
+---
+import media from "../content/media.json";
+const enabledMedia = media.filter((item) => item.enabled);
+---
+
+<section class="section gallery-section" id="estrutura">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Ambientes reais</p>
+        <h2>Conheça a Gaia</h2>
+      </div>
+      <div class="gallery-controls" aria-label="Controles da galeria">
+        <button type="button" data-gallery-prev aria-label="Foto anterior">←</button>
+        <button type="button" data-gallery-next aria-label="Próxima foto">→</button>
+      </div>
+    </div>
+    <div class="gallery" data-gallery tabindex="0" aria-label="Fotos da estrutura da Gaia">
+      {enabledMedia.map((item) => (
+        <figure class="gallery-item">
+          <picture>
+            <source media="(max-width: 800px)" srcset={item.src800} />
+            <img src={item.src1600} alt={item.alt} width="800" height="560" loading="lazy" />
+          </picture>
+          <figcaption>{item.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+    <a class="text-link" href="/estrutura/">Ver estrutura completa <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<script>
+  const gallery = document.querySelector<HTMLElement>("[data-gallery]");
+  const previous = document.querySelector<HTMLButtonElement>("[data-gallery-prev]");
+  const next = document.querySelector<HTMLButtonElement>("[data-gallery-next]");
+  const move = (direction: number) => {
+    if (!gallery) return;
+    const card = gallery.querySelector<HTMLElement>(".gallery-item");
+    gallery.scrollBy({ left: direction * ((card?.offsetWidth || 320) + 20), behavior: "smooth" });
+  };
+  previous?.addEventListener("click", () => move(-1));
+  next?.addEventListener("click", () => move(1));
+</script>

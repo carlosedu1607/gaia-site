@@ -1,0 +1,18 @@
+---
+import site from "../content/site.json";
+---
+
+<section class="section services" id="servicos">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Formas de acolher</p>
+        <h2>Nossos serviços</h2>
+      </div>
+      <p>Modalidades para diferentes momentos e necessidades da pessoa idosa e de sua família.</p>
+    </div>
+    <div class="card-grid service-grid">
+      {site.services.map((service, index) => (\n        <article class="card service-card">\n          <span class="service-number" aria-hidden="true">0{index + 1}</span>\n          <h3>{service.title}</h3>\n          <p>{service.description}</p>\n          <a class="text-link" href={service.href}>Conhecer o serviço <span aria-hidden="true">→</span></a>\n        </article>\n      ))}
+    </div>
+  </div>
+</section>

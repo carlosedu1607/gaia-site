@@ -1,0 +1,30 @@
+---
+import site from "../content/site.json";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="/brand/logo-gaia-footer.png" alt="Gaia Vida Ainda" width="194" height="66" loading="lazy" />
+      <p>{site.brand.positioning}</p>
+    </div>
+    <div>
+      <h2>Contato</h2>
+      <address>
+        {site.contact.addressLine}<br />
+        {site.contact.district} — {site.contact.city}/{site.contact.state}
+      </address>
+      <a href={`https://wa.me/${site.contact.whatsappDigits}`}>{site.contact.whatsappDisplay}</a>
+    </div>
+    <div>
+      <h2>Links</h2>
+      <a href="/privacidade/">Política de privacidade</a>
+      <a href={site.contact.instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
+      <a href="/conteudos/">Conteúdos</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} Gaia Vida Ainda.</span>
+    <span>Razão social e CNPJ: confirmar antes da publicação.</span>
+  </div>
+</footer>

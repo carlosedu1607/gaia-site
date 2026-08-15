@@ -1,0 +1,88 @@
+---
+import site from "../content/site.json";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
+---
+
+<section class="section contact-section" id="contato">
+  <div class="container contact-grid">
+    <div class="contact-copy">
+      <p class="eyebrow light">Vamos conversar</p>
+      <h2>Agende uma visita à Gaia</h2>
+      <p>Envie seus dados ou chame pelo WhatsApp. Neste primeiro contato, não informe diagnósticos, prontuários ou outros dados médicos.</p>
+      <ul class="contact-list">
+        <li><strong>WhatsApp</strong><a href={`https://wa.me/${site.contact.whatsappDigits}`}>{site.contact.whatsappDisplay}</a></li>
+        <li><strong>Endereço</strong><a href={site.contact.mapsUrl} target="_blank" rel="noreferrer">{site.contact.addressLine}, {site.contact.district}</a></li>
+        <li><strong>Atendimento</strong><span>{site.contact.businessHours}</span></li>
+      </ul>
+    </div>
+    <form class="contact-form" action="/api/lead" method="post" data-contact-form>
+      <div class="field-grid">
+        <label>Nome completo <input name="name" autocomplete="name" minlength="2" maxlength="100" required /></label>
+        <label>WhatsApp <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" required /></label>
+      </div>
+      <div class="field-grid">
+        <label>E-mail <input name="email" type="email" autocomplete="email" maxlength="160" /></label>
+        <label>Prefiro receber retorno por
+          <select name="preferredContact">
+            <option value="whatsapp">WhatsApp</option>
+            <option value="telefone">Telefone</option>
+            <option value="email">E-mail</option>
+          </select>
+        </label>
+      </div>
+      <label>Como podemos ajudar?
+        <textarea name="message" rows="4" maxlength="1200" placeholder="Conte apenas o necessário para iniciarmos a conversa."></textarea>
+      </label>
+      <label class="honeypot" aria-hidden="true">Empresa <input name="company" tabindex="-1" autocomplete="off" /></label>
+      <input type="hidden" name="sourcePage" value={Astro.url.pathname} />
+      <input type="hidden" name="referrer" value="" data-referrer />
+      <input type="hidden" name="utm_source" value="" />
+      <input type="hidden" name="utm_medium" value="" />
+      <input type="hidden" name="utm_campaign" value="" />
+      <input type="hidden" name="utm_content" value="" />
+      {turnstileSiteKey ? (
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
+      ) : (
+        <p class="form-setup-note">Turnstile pendente: configure a chave para ativar envios.</p>
+      )}
+      <label class="consent">
+        <input type="checkbox" name="consent" required />
+        <span>Autorizo a Gaia a usar estes dados para responder ao meu contato, conforme a <a href="/privacidade/">Política de Privacidade</a>.</span>
+      </label>
+      <button class="button button-primary" type="submit" disabled={!turnstileSiteKey}>Enviar contato</button>
+      <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+{turnstileSiteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
+  if (form) {
+    const status = form.querySelector<HTMLElement>("[data-form-status]");
+    const params = new URLSearchParams(window.location.search);
+    const referrer = form.querySelector<HTMLInputElement>("[data-referrer]");
+    if (referrer) referrer.value = document.referrer;
+    for (const name of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) {
+      const input = form.elements.namedItem(name) as HTMLInputElement | null;
+      if (input) input.value = params.get(name) || "";
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = form.querySelector<HTMLButtonElement>("button[type='submit']");
+      if (button) button.disabled = true;
+      if (status) status.textContent = "Enviando...";
+      try {
+        const response = await fetch(form.action, { method: "POST", body: new FormData(form) });
+        const result = await response.json() as { ok?: boolean; message?: string; redirect?: string };
+        if (!response.ok || !result.ok) throw new Error(result.message || "Não foi possível enviar.");
+        window.location.href = result.redirect || "/obrigado/";
+      } catch (error) {
+        if (status) status.textContent = error instanceof Error ? error.message : "Não foi possível enviar. Tente pelo WhatsApp.";
+        if (button) button.disabled = false;
+      }
+    });
+  }
+</script>
