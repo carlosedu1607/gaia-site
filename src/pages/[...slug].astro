@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Gallery from "../components/Gallery.astro";
+import Services from "../components/Services.astro";
+import ContactForm from "../components/ContactForm.astro";
+import pages from "../content/pages.json";
+import site from "../content/site.json";
+
+export function getStaticPaths() {
+  return pages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+interface PageData {
+  slug: string;
+  title: string;
+  eyebrow: string;
+  description: string;
+  sections: Array<{ title: string; text: string }>;
+}
+
+const { page } = Astro.props as { page: PageData };
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <header class="internal-hero">
+    <div class="container">
+      <p class="eyebrow">{page.eyebrow}</p>
+      <h1>{page.title}</h1>
+      <p>{page.description}</p>
+    </div>
+  </header>
+
+  {page.slug === "servicos" && <Services />}
+  {page.slug === "estrutura" && <Gallery />}
+
+  {page.sections.length > 0 && (
+    <section class="section">
+      <div class="container content-grid">
+        {page.sections.map((section) => (
+          <article class="content-card"><h2>{section.title}</h2><p>{section.text}</p></article>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {page.slug === "duvidas" && (
+    <section class="section">
+      <div class="container accordion narrow">
+        {site.faq.map((item, index) => (
+          <details open={index === 0}><summary>{item.question}</summary><p>{item.answer}</p></details>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {(page.slug === "contato" || page.slug.startsWith("servicos/")) && <ContactForm />}
+</BaseLayout>

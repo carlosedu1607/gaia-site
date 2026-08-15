@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Gallery from "../components/Gallery.astro";
+import ContactForm from "../components/ContactForm.astro";
+import site from "../content/site.json";
+---
+
+<BaseLayout>
+  <Hero />
+
+  <section class="trust-strip" aria-label="Informações sobre a Gaia">
+    <div class="container trust-grid">
+      {site.trust.map((item) => (
+        <div><strong>{item.value}</strong><span>{item.label}</span></div>
+      ))}
+    </div>
+  </section>
+
+  <Services />
+  <Gallery />
+
+  <section class="section care-section">
+    <div class="container split-layout">
+      <div class="split-media">
+        <picture>
+          <source media="(max-width: 800px)" srcset="/media/site/patio-800.webp" />
+          <img src="/media/site/patio-1600.webp" alt="Pátio e área de convivência da Gaia" width="800" height="800" loading="lazy" />
+        </picture>
+      </div>
+      <div class="split-copy">
+        <p class="eyebrow">Acolhimento com respeito</p>
+        <h2>Cuidado que respeita cada história</h2>
+        <p>A proposta da Gaia combina convivência, ambiente acolhedor e atenção às necessidades de cada pessoa. Os detalhes da rotina e da equipe serão atualizados após a validação de Sara e Eve.</p>
+        <ul class="check-list">
+          {site.differentials.map((item) => <li>{item}</li>)}
+        </ul>
+        <a class="button button-secondary" href="/a-gaia/">Conhecer nossa história</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process-section">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Primeiro contato</p><h2>Como funciona</h2></div>
+        <p>Um caminho simples para conhecer a Gaia e entender a modalidade mais adequada.</p>
+      </div>
+      <div class="process-grid">
+        {site.process.map((item) => (
+          <article><span>{item.step}</span><h3>{item.title}</h3><p>{item.text}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container faq-layout">
+      <div>
+        <p class="eyebrow">Dúvidas frequentes</p>
+        <h2>Informação para decidir com tranquilidade</h2>
+        <p>Estas respostas são preliminares e serão substituídas pelas informações confirmadas por Sara e Eve.</p>
+        <a class="text-link" href="/duvidas/">Ver todas as dúvidas <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="accordion">
+        {site.faq.map((item, index) => (
+          <details open={index === 0}>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</BaseLayout>

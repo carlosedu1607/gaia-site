@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ReviewBanner from "../components/ReviewBanner.astro";
+import site from "../content/site.json";
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = site.seo.title,
+  description = site.seo.description,
+  noindex = false
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
+const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE !== "false";
+const fullTitle = title === site.seo.title ? title : `${title} | ${site.brand.shortName}`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: site.brand.name,
+  url: canonical.origin,
+  telephone: site.contact.phoneDisplay,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.contact.addressLine,
+    addressLocality: site.contact.city,
+    addressRegion: site.contact.state,
+    addressCountry: "BR"
+  },
+  sameAs: [site.contact.instagramUrl]
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#123f33" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/brand/logo-gaia.png" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL("/media/site/fachada-1600.webp", canonical.origin)} />
+    <title>{fullTitle}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    {reviewMode && <ReviewBanner message={site.project.notice} />}
+    <Header />
+    <main id="conteudo">
+      <slot />
+    </main>
+    <Footer />
+    <a
+      class="whatsapp-float"
+      href={`https://wa.me/${site.contact.whatsappDigits}?text=${encodeURIComponent("Olá! Conheci a Gaia pelo site e gostaria de mais informações.")}`}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Falar com a Gaia pelo WhatsApp"
+      data-event="whatsapp_float"
+    >
+      <span aria-hidden="true">◉</span>
+      <span>WhatsApp</span>
+    </a>
+  </body>
+</html>

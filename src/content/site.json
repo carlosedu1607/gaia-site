@@ -1,0 +1,114 @@
+{
+  "project": {
+    "stage": "protótipo",
+    "contentVersion": "0.1",
+    "lastUpdated": "2026-08-15",
+    "validationOwners": ["Sara", "Eve"],
+    "notice": "Conteúdo preliminar extraído do site atual. Validar antes da publicação."
+  },
+  "brand": {
+    "name": "Gaia Vida Ainda",
+    "shortName": "Gaia",
+    "positioning": "Um lugar para a vida, com acolhimento, vínculos, autonomia e cuidado."
+  },
+  "seo": {
+    "title": "Gaia Vida Ainda | Residência para idosos em Curitiba",
+    "description": "Conheça a Gaia Vida Ainda, residência para idosos em Curitiba com opções de longa permanência, moradia temporária e centro-dia.",
+    "keywords": [
+      "residência para idosos em Curitiba",
+      "casa de repouso em Curitiba",
+      "centro-dia para idosos",
+      "moradia temporária para idosos"
+    ]
+  },
+  "contact": {
+    "addressLine": "Rua do Amapá, 101",
+    "district": "Vista Alegre",
+    "city": "Curitiba",
+    "state": "PR",
+    "postalCode": "",
+    "whatsappDisplay": "(41) 99824-0327",
+    "whatsappDigits": "5541998240327",
+    "phoneDisplay": "(41) 99824-0327",
+    "currentEmail": "gaia_264@hotmail.com",
+    "professionalEmail": "DEFINIR_APOS_CONTRATACAO",
+    "businessHours": "Segunda a sexta, das 8h às 18h — confirmar",
+    "instagramUrl": "https://www.instagram.com/gaiaresidenciaparaidosos/",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+do+Amapa+101+Vista+Alegre+Curitiba+PR"
+  },
+  "navigation": [
+    { "label": "Início", "href": "/" },
+    { "label": "A Gaia", "href": "/a-gaia/" },
+    { "label": "Serviços", "href": "/servicos/" },
+    { "label": "Estrutura", "href": "/estrutura/" },
+    { "label": "Dúvidas", "href": "/duvidas/" },
+    { "label": "Contato", "href": "/contato/" }
+  ],
+  "hero": {
+    "eyebrow": "Desde 1988 — confirmar",
+    "title": "Um lugar para a vida, com acolhimento e cuidado.",
+    "text": "Há mais de três décadas, a Gaia oferece convivência, segurança e qualidade de vida para pessoas idosas e suas famílias.",
+    "primaryCta": "Agendar uma visita",
+    "secondaryCta": "Falar no WhatsApp"
+  },
+  "trust": [
+    { "value": "1988", "label": "Ano de fundação — confirmar" },
+    { "value": "3", "label": "Modalidades de atendimento" },
+    { "value": "Curitiba", "label": "Bairro Vista Alegre" }
+  ],
+  "services": [
+    {
+      "id": "longa-permanencia",
+      "title": "Longa permanência",
+      "description": "Moradia contínua em ambiente acolhedor, com rotina e cuidado adaptados às necessidades de cada pessoa.",
+      "href": "/servicos/longa-permanencia/",
+      "status": "validar indicação, inclusões e perfil atendido"
+    },
+    {
+      "id": "moradia-temporaria",
+      "title": "Moradia temporária",
+      "description": "Estadia por período determinado, pensada para oferecer segurança, convivência e apoio à família.",
+      "href": "/servicos/moradia-temporaria/",
+      "status": "validar período, condições e inclusões"
+    },
+    {
+      "id": "centro-dia",
+      "title": "Centro-dia",
+      "description": "Atividades, convivência e cuidado durante o dia, com retorno para casa ao final do período.",
+      "href": "/servicos/centro-dia/",
+      "status": "validar dias, horários e funcionamento"
+    }
+  ],
+  "differentials": [
+    "História de cuidado e convivência desde 1988 — confirmar",
+    "Ambientes internos e externos para encontros e atividades",
+    "Acomodações individuais e duplas — confirmar capacidade",
+    "Rotina de alimentação, hidratação e atividades — validar detalhes",
+    "Contato próximo com familiares — validar fluxo"
+  ],
+  "process": [
+    { "step": "1", "title": "Primeiro contato", "text": "Conte brevemente o que sua família procura, sem enviar dados médicos sensíveis." },
+    { "step": "2", "title": "Visita à Gaia", "text": "Agendamos um horário para conhecer a estrutura e conversar com tranquilidade." },
+    { "step": "3", "title": "Avaliação das necessidades", "text": "A equipe entende o contexto e verifica a modalidade mais adequada." },
+    { "step": "4", "title": "Proposta e próximos passos", "text": "A família recebe as orientações, condições e documentos necessários." }
+  ],
+  "testimonials": [],
+  "faq": [
+    {
+      "question": "Quais modalidades de atendimento a Gaia oferece?",
+      "answer": "O site atual informa longa permanência, moradia temporária e centro-dia. Sara e Eve confirmarão o funcionamento e as condições de cada modalidade."
+    },
+    {
+      "question": "Como faço para conhecer a Gaia?",
+      "answer": "Você pode iniciar o contato pelo WhatsApp ou pelo formulário. Os horários de visita ainda serão confirmados."
+    },
+    {
+      "question": "Os valores aparecem no site?",
+      "answer": "A política de divulgação de valores será definida após a validação de Sara e Eve. Por enquanto, a orientação é solicitar uma conversa."
+    },
+    {
+      "question": "Quais tipos de quartos existem?",
+      "answer": "O site atual menciona suítes e quartos individuais ou duplos. Capacidade, disponibilidade e itens inclusos ainda serão confirmados."
+    }
+  ]
+}

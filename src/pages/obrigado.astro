@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import site from "../content/site.json";
+---
+
+<BaseLayout title="Contato recebido" description="Confirmação de contato com a Gaia." noindex={true}>
+  <section class="thank-you">
+    <div class="container narrow">
+      <p class="eyebrow">Mensagem recebida</p>
+      <h1>Obrigado pelo contato.</h1>
+      <p>A Gaia recebeu seus dados e retornará conforme o horário de atendimento. Caso prefira, fale diretamente pelo WhatsApp.</p>
+      <div class="button-group centered">
+        <a class="button button-primary" href={`https://wa.me/${site.contact.whatsappDigits}`}>Abrir WhatsApp</a>
+        <a class="button button-secondary" href="/">Voltar ao início</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
