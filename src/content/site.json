@@ -1,7 +1,7 @@
 {
   "project": {
     "stage": "protótipo",
-    "contentVersion": "0.1",
+    "contentVersion": "0.2",
     "lastUpdated": "2026-08-15",
     "validationOwners": ["Sara", "Eve"],
     "notice": "Conteúdo preliminar extraído do site atual. Validar antes da publicação."
@@ -32,7 +32,8 @@
     "phoneDisplay": "(41) 99824-0327",
     "currentEmail": "gaia_264@hotmail.com",
     "professionalEmail": "DEFINIR_APOS_CONTRATACAO",
-    "businessHours": "Segunda a sexta, das 8h às 18h — confirmar",
+    "businessHours": "Segunda a sexta, das 8h às 18h",
+    "businessHoursReview": "confirmar horário comercial definitivo",
     "instagramUrl": "https://www.instagram.com/gaiaresidenciaparaidosos/",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+do+Amapa+101+Vista+Alegre+Curitiba+PR"
   },
@@ -45,14 +46,15 @@
     { "label": "Contato", "href": "/contato/" }
   ],
   "hero": {
-    "eyebrow": "Desde 1988 — confirmar",
+    "eyebrow": "Desde 1988",
+    "eyebrowReview": "confirmar ano exato de fundação",
     "title": "Um lugar para a vida, com acolhimento e cuidado.",
     "text": "Há mais de três décadas, a Gaia oferece convivência, segurança e qualidade de vida para pessoas idosas e suas famílias.",
     "primaryCta": "Agendar uma visita",
     "secondaryCta": "Falar no WhatsApp"
   },
   "trust": [
-    { "value": "1988", "label": "Ano de fundação — confirmar" },
+    { "value": "1988", "label": "Ano de fundação", "review": "confirmar fundação em 1988" },
     { "value": "3", "label": "Modalidades de atendimento" },
     { "value": "Curitiba", "label": "Bairro Vista Alegre" }
   ],
@@ -80,11 +82,17 @@
     }
   ],
   "differentials": [
-    "História de cuidado e convivência desde 1988 — confirmar",
-    "Ambientes internos e externos para encontros e atividades",
-    "Acomodações individuais e duplas — confirmar capacidade",
-    "Rotina de alimentação, hidratação e atividades — validar detalhes",
-    "Contato próximo com familiares — validar fluxo"
+    "História de cuidado e convivência dedicada à pessoa idosa",
+    "Ambientes internos e externos integrados para encontros e bem-estar",
+    "Acomodações acolhedoras pensadas para conforto e privacidade",
+    "Atenção diária à alimentação, hidratação e rotina de atividades",
+    "Relacionamento próximo e transparente com os familiares"
+  ],
+  "differentialsValidation": [
+    "Validar ano de fundação 1988",
+    "Confirmar capacidade de acomodações individuais e duplas",
+    "Validar detalhes da rotina de atividades e hidratação",
+    "Validar fluxo de contato com familiares"
   ],
   "process": [
     { "step": "1", "title": "Primeiro contato", "text": "Conte brevemente o que sua família procura, sem enviar dados médicos sensíveis." },
@@ -96,19 +104,19 @@
   "faq": [
     {
       "question": "Quais modalidades de atendimento a Gaia oferece?",
-      "answer": "O site atual informa longa permanência, moradia temporária e centro-dia. Sara e Eve confirmarão o funcionamento e as condições de cada modalidade."
+      "answer": "A Gaia dispõe de opções de longa permanência, moradia temporária e centro-dia. Nossa equipe apresentará os detalhes de cada modalidade conforme as necessidades da sua família."
     },
     {
       "question": "Como faço para conhecer a Gaia?",
-      "answer": "Você pode iniciar o contato pelo WhatsApp ou pelo formulário. Os horários de visita ainda serão confirmados."
+      "answer": "Você pode iniciar o contato pelo WhatsApp ou preencher o formulário para agendarmos uma visita guiada às nossas instalações."
     },
     {
       "question": "Os valores aparecem no site?",
-      "answer": "A política de divulgação de valores será definida após a validação de Sara e Eve. Por enquanto, a orientação é solicitar uma conversa."
+      "answer": "O plano de atendimento e os valores são personalizados conforme a modalidade escolhida e as necessidades de assistência. Converse conosco para receber uma orientação completa."
     },
     {
       "question": "Quais tipos de quartos existem?",
-      "answer": "O site atual menciona suítes e quartos individuais ou duplos. Capacidade, disponibilidade e itens inclusos ainda serão confirmados."
+      "answer": "A estrutura conta com suítes e quartos individuais ou compartilhados, equipados para garantir conforto, segurança e acessibilidade."
     }
   ]
 }
