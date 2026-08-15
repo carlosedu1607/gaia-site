@@ -1,6 +1,7 @@
 ---
 import site from "../content/site.json";
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
+const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE !== "false";
 ---
 
 <section class="section contact-section" id="contato">
@@ -42,9 +43,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
       <input type="hidden" name="utm_content" value="" />
       {turnstileSiteKey ? (
         <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
-      ) : (
+      ) : reviewMode ? (
         <p class="form-setup-note">Turnstile pendente: configure a chave para ativar envios.</p>
-      )}
+      ) : null}
       <label class="consent">
         <input type="checkbox" name="consent" required />
         <span>Autorizo a Gaia a usar estes dados para responder ao meu contato, conforme a <a href="/privacidade/">Política de Privacidade</a>.</span>
@@ -72,6 +73,10 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const button = form.querySelector<HTMLButtonElement>("button[type='submit']");
+      if (button?.disabled) {
+        if (status) status.textContent = "O envio pelo formulário está desativado no momento. Entre em contato pelo WhatsApp.";
+        return;
+      }
       if (button) button.disabled = true;
       if (status) status.textContent = "Enviando...";
       try {
