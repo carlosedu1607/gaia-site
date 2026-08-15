@@ -1,168 +1,188 @@
 interface Env {
-  ASSETS: Fetcher;
   DB: D1Database;
-  SITE_URL: string;
   TURNSTILE_SECRET_KEY?: string;
-  LEAD_HASH_SALT?: string;
-  LEAD_TO_EMAIL?: string;
   LEAD_NOTIFICATION_WEBHOOK_URL?: string;
   LEAD_NOTIFICATION_WEBHOOK_SECRET?: string;
+  LEAD_TO_EMAIL?: string;
+  IP_SALT?: string;
 }
 
-interface LeadInput {
+interface LeadPayload {
   name: string;
   phone: string;
   email: string;
   preferredContact: string;
   message: string;
-  consent: boolean;
   sourcePage: string;
   referrer: string;
   utmSource: string;
   utmMedium: string;
   utmCampaign: string;
   utmContent: string;
-  turnstileToken: string;
-  company: string;
 }
 
 const json = (data: unknown, status = 200) =>
-  new Response(JSON.stringify(data), {\n    status,\n    headers: {\n      \"content-type\": \"application/json; charset=utf-8\",\n      \"cache-control\": \"no-store\",\n      \"x-content-type-options\": \"nosniff\"\n    }\n  });
+  new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "no-store",
+      "x-content-type-options": "nosniff"
+    }
+  });
 
 const textValue = (value: FormDataEntryValue | null, limit = 500) =>
-  String(value ?? \"\").trim().slice(0, limit);
+  String(value ?? "").trim().slice(0, limit);
 
 const hashIp = async (ip: string, salt: string) => {
-  const bytes = new TextEncoder().encode(`${salt}:${ip}`);
-  const digest = await crypto.subtle.digest(\"SHA-256\", bytes);
+  const bytes = new TextEncoder().encode(`${ip}:${salt}`);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
   return [...new Uint8Array(digest)]
-    .map((byte) => byte.toString(16).padStart(2, \"0\"))
-    .join(\"\");
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
 };
 
 async function verifyTurnstile(token: string, ip: string, secret: string) {
   const response = await fetch(
-    \"https://challenges.cloudflare.com/turnstile/v0/siteverify\",
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     {
-      method: \"POST\",
-      headers: { \"content-type\": \"application/json\" },
+      method: "POST",
+      headers: { "content-type": "application/json" },
       body: JSON.stringify({ secret, response: token, remoteip: ip })
     }
   );
-
-  if (!response.ok) return false;
-  const result = (await response.json()) as { success?: boolean };
-  return result.success === true;
+  const data = (await response.json()) as { success: boolean };
+  return data.success;
 }
 
-async function notifyLead(env: Env, lead: LeadInput) {
+async function sendNotification(env: Env, lead: LeadPayload) {
   if (!env.LEAD_NOTIFICATION_WEBHOOK_URL) return;
-
-  await fetch(env.LEAD_NOTIFICATION_WEBHOOK_URL, {\n    method: \"POST\",\n    headers: {\n      \"content-type\": \"application/json\",\n      ...(env.LEAD_NOTIFICATION_WEBHOOK_SECRET\n        ? { authorization: `Bearer ${env.LEAD_NOTIFICATION_WEBHOOK_SECRET}` }\n        : {})\n    },\n    body: JSON.stringify({\n      event: \"gaia.lead.created\",\n      destination: env.LEAD_TO_EMAIL,\n      lead: {\n        name: lead.name,\n        phone: lead.phone,\n        email: lead.email,\n        preferredContact: lead.preferredContact,\n        message: lead.message,\n        sourcePage: lead.sourcePage\n      }\n    })\n  });
-}
-
-async function handleLead(request: Request, env: Env, context: ExecutionContext) {
-  const requestOrigin = request.headers.get(\"origin\");
-  const allowedOrigin = new URL(env.SITE_URL).origin;
-
-  if (requestOrigin && requestOrigin !== allowedOrigin) {
-    return json({ ok: false, message: \"Origem não autorizada.\" }, 403);
-  }
-
-  if (!env.TURNSTILE_SECRET_KEY || !env.LEAD_HASH_SALT) {
-    return json(
-      { ok: false, message: \"O formulário ainda não está configurado.\" },
-      503
-    );
-  }
-
-  const form = await request.formData();
-  const lead: LeadInput = {
-    name: textValue(form.get(\"name\"), 100),
-    phone: textValue(form.get(\"phone\"), 30),
-    email: textValue(form.get(\"email\"), 160),
-    preferredContact: textValue(form.get(\"preferredContact\"), 30),
-    message: textValue(form.get(\"message\"), 1200),
-    consent: form.get(\"consent\") === \"on\",
-    sourcePage: textValue(form.get(\"sourcePage\"), 300),
-    referrer: textValue(form.get(\"referrer\"), 500),
-    utmSource: textValue(form.get(\"utm_source\"), 120),
-    utmMedium: textValue(form.get(\"utm_medium\"), 120),
-    utmCampaign: textValue(form.get(\"utm_campaign\"), 160),
-    utmContent: textValue(form.get(\"utm_content\"), 160),
-    turnstileToken: textValue(form.get(\"cf-turnstile-response\"), 2048),
-    company: textValue(form.get(\"company\"), 120)
-  };
-
-  if (lead.company) return json({ ok: true });
-
-  const phoneDigits = lead.phone.replace(/\\D/g, \"\");
-  const emailIsValid = !lead.email || /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(lead.email);
-  if (
-    lead.name.length < 2 ||
-    phoneDigits.length < 10 ||
-    !emailIsValid ||
-    !lead.consent ||
-    !lead.turnstileToken
-  ) {
-    return json(
-      { ok: false, message: \"Revise os campos obrigatórios e tente novamente.\" },
-      400
-    );
-  }
-
-  const ip = request.headers.get(\"CF-Connecting-IP\") || \"unknown\";
-  const ipHash = await hashIp(ip, env.LEAD_HASH_SALT);
-  const recent = await env.DB.prepare(
-    \"SELECT COUNT(*) AS total FROM leads WHERE ip_hash = ? AND created_at >= datetime('now', '-15 minutes')\"\n  )\n    .bind(ipHash)\n    .first<{ total: number }>();
-
-  if ((recent?.total ?? 0) >= 5) {
-    return json(
-      { ok: false, message: \"Muitas tentativas. Aguarde alguns minutos.\" },
-      429
-    );
-  }
-
-  const turnstileOk = await verifyTurnstile(
-    lead.turnstileToken,
-    ip,
-    env.TURNSTILE_SECRET_KEY
-  );
-  if (!turnstileOk) {
-    return json(
-      { ok: false, message: \"Não foi possível validar o envio. Tente novamente.\" },
-      400
-    );
-  }
-
-  await env.DB.prepare(
-    `INSERT INTO leads (
-      name, phone, email, preferred_contact, message, consent,
-      source_page, referrer, utm_source, utm_medium, utm_campaign,
-      utm_content, ip_hash
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
-  )\n    .bind(
-      lead.name,
-      lead.phone,
-      lead.email || null,
-      lead.preferredContact || \"whatsapp\",\n      lead.message || null,\n      lead.consent ? 1 : 0,\n      lead.sourcePage || null,\n      lead.referrer || null,\n      lead.utmSource || null,\n      lead.utmMedium || null,\n      lead.utmCampaign || null,\n      lead.utmContent || null,\n      ipHash\n    )\n    .run();
-
-  context.waitUntil(notifyLead(env, lead).catch(() => undefined));
-  return json({ ok: true, redirect: \"/obrigado/\" }, 201);
+  await fetch(env.LEAD_NOTIFICATION_WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      ...(env.LEAD_NOTIFICATION_WEBHOOK_SECRET
+        ? { authorization: `Bearer ${env.LEAD_NOTIFICATION_WEBHOOK_SECRET}` }
+        : {})
+    },
+    body: JSON.stringify({
+      event: "gaia.lead.created",
+      destination: env.LEAD_TO_EMAIL,
+      lead: {
+        name: lead.name,
+        phone: lead.phone,
+        email: lead.email,
+        preferredContact: lead.preferredContact,
+        message: lead.message,
+        sourcePage: lead.sourcePage
+      }
+    })
+  });
 }
 
 export default {
-  async fetch(request: Request, env: Env, context: ExecutionContext) {
+  async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
 
-    if (url.pathname === \"/api/lead\" && request.method === \"POST\") {
-      return handleLead(request, env, context);
+    if (url.pathname === "/api/health") {
+      return json({ ok: true, timestamp: new Date().toISOString() });
     }
 
-    if (url.pathname.startsWith(\"/api/\")) {
-      return json({ ok: false, message: \"Rota não encontrada.\" }, 404);
+    if (url.pathname === "/api/lead" && request.method === "POST") {
+      try {
+        const formData = await request.formData();
+        const honeypot = textValue(formData.get("company"), 100);
+        if (honeypot) {
+          return json({ ok: true, message: "Recebido." }, 200);
+        }
+
+        const name = textValue(formData.get("name"), 100);
+        const phone = textValue(formData.get("phone"), 30);
+        const email = textValue(formData.get("email"), 160);
+        const preferredContact = textValue(formData.get("preferredContact"), 20) || "whatsapp";
+        const message = textValue(formData.get("message"), 1200);
+        const consent = textValue(formData.get("consent"), 10);
+        const sourcePage = textValue(formData.get("sourcePage"), 200) || "/";
+        const referrer = textValue(formData.get("referrer"), 500);
+        const utmSource = textValue(formData.get("utm_source"), 100);
+        const utmMedium = textValue(formData.get("utm_medium"), 100);
+        const utmCampaign = textValue(formData.get("utm_campaign"), 100);
+        const utmContent = textValue(formData.get("utm_content"), 100);
+        const turnstileToken = textValue(formData.get("cf-turnstile-response"), 2048);
+
+        if (!name || name.length < 2) {
+          return json({ ok: false, message: "Informe seu nome completo." }, 400);
+        }
+        if (!phone || phone.length < 8) {
+          return json({ ok: false, message: "Informe um telefone/WhatsApp válido." }, 400);
+        }
+        if (!consent) {
+          return json({ ok: false, message: "É necessário concordar com os termos de privacidade." }, 400);
+        }
+
+        const clientIp = request.headers.get("cf-connecting-ip") || "unknown";
+        if (env.TURNSTILE_SECRET_KEY) {
+          if (!turnstileToken) {
+            return json({ ok: false, message: "Confirmação de segurança ausente." }, 400);
+          }
+          const validToken = await verifyTurnstile(turnstileToken, clientIp, env.TURNSTILE_SECRET_KEY);
+          if (!validToken) {
+            return json({ ok: false, message: "Validação de segurança não aprovada. Tente novamente." }, 400);
+          }
+        }
+
+        const ipSalt = env.IP_SALT || "gaia-default-salt";
+        const ipHash = await hashIp(clientIp, ipSalt);
+        const id = crypto.randomUUID();
+        const createdAt = new Date().toISOString();
+
+        if (env.DB) {
+          await env.DB.prepare(
+            `INSERT INTO leads (
+              id, created_at, name, phone, email, preferred_contact, message,
+              source_page, referrer, utm_source, utm_medium, utm_campaign, utm_content,
+              ip_hash, user_agent, turnstile_verified
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+          ).bind(
+            id,
+            createdAt,
+            name,
+            phone,
+            email || null,
+            preferredContact,
+            message || null,
+            sourcePage,
+            referrer || null,
+            utmSource || null,
+            utmMedium || null,
+            utmCampaign || null,
+            utmContent || null,
+            ipHash,
+            request.headers.get("user-agent") || "unknown",
+            env.TURNSTILE_SECRET_KEY ? 1 : 0
+          ).run();
+        }
+
+        await sendNotification(env, {
+          name,
+          phone,
+          email,
+          preferredContact,
+          message,
+          sourcePage,
+          referrer,
+          utmSource,
+          utmMedium,
+          utmCampaign,
+          utmContent
+        });
+
+        return json({ ok: true, redirect: "/obrigado/" }, 200);
+      } catch (err) {
+        return json({ ok: false, message: "Erro ao processar envio. Tente pelo WhatsApp." }, 500);
+      }
     }
 
-    return env.ASSETS.fetch(request);
+    return json({ ok: false, message: "Endpoint não encontrado." }, 404);
   }
-} satisfies ExportedHandler<Env>;
+};
