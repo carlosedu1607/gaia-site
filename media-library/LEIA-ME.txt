@@ -1,0 +1,26 @@
+GAIA - ACERVO EXTRAÍDO DO SITE ATUAL
+Data da extração: 15/08/2026
+
+RESUMO
+- Arquivos únicos baixados: 29
+- Fotografias identificadas: 25
+- Logos ou elementos gráficos: 4
+- Duplicatas exatas removidas: 0
+- Páginas públicas verificadas: 8
+
+ESTRUTURA
+- 01_fotos: imagens fotográficas encontradas nas páginas públicas atuais.
+- 02_logos_e_graficos: logos e elementos visuais que estavam no mesmo acervo público.
+- inventario.csv: dimensões, tamanho, origem e páginas em que cada arquivo foi encontrado.
+- prancha_de_contato.jpg: miniaturas para revisão rápida.
+
+OBSERVAÇÕES IMPORTANTES
+- Os arquivos foram preservados na maior resolução disponibilizada publicamente pelo WordPress.
+- Não houve ampliação artificial, restauração ou tratamento das fotografias.
+- A classificação entre foto e elemento gráfico é técnica e deve ser validada visualmente.
+- Antes de reutilizar imagens com moradores, familiares, visitantes ou colaboradores, confirme a autorização de uso de imagem e a adequação à LGPD.
+- Fotos antigas, desatualizadas ou com baixa qualidade devem ser tratadas como material provisório e não substituem o novo ensaio fotográfico.
+
+FONTE
+Site público: https://gaiaresidenciaparaidosos.com.br/
+Galeria pública: https://gaiaresidenciaparaidosos.com.br/galeria/
