@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 74" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo da Gaia</title>
+  <desc id="desc">Círculo amarelo da Gaia com seis pontos brancos.</desc>
+  <circle cx="37" cy="37" r="33" fill="#f7cf1e"/>
+  <g fill="#ffffff">
+    <circle cx="36.7" cy="20.5" r="5.25"/>
+    <circle cx="22.9" cy="28.4" r="5.25"/>
+    <circle cx="50.3" cy="28.5" r="5.25"/>
+    <circle cx="22.9" cy="44.1" r="5.25"/>
+    <circle cx="50.1" cy="44.1" r="5.25"/>
+    <circle cx="36.9" cy="52.1" r="5.25"/>
+  </g>
+</svg>
