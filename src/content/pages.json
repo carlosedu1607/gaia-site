@@ -3,86 +3,122 @@
     "slug": "a-gaia",
     "title": "A Gaia",
     "eyebrow": "Nossa história",
-    "description": "Uma história de acolhimento iniciada em 1988 — conteúdo em validação.",
+    "description": "Desde agosto de 1988, a Gaia acolhe pessoas idosas e acompanha histórias que atravessam gerações, em um ambiente familiar com cuidado humanizado.",
     "sections": [
       {
-        "title": "Um lugar pensado para a vida",
-        "text": "A história publicada no site atual informa que a Gaia nasceu em setembro de 1988, inspirada pela tia Vita e pela busca por um lugar de intimidade, pertencimento e convivência. Sara e Eve confirmarão a versão final desta história."
+        "title": "Uma casa para viver com cuidado, autonomia e pertencimento.",
+        "text": "Gaia significa “Mãe Terra”. Desde agosto de 1988, a casa acolhe pessoas idosas e acompanha histórias que atravessam gerações. Sua origem nasceu de uma necessidade familiar e doméstica e, ao longo das décadas, transformou-se em um espaço de cuidado, convivência e respeito à individualidade. Hoje, a Gaia promove autonomia e qualidade de vida por meio de rotinas personalizadas, em um ambiente familiar que combina rigor técnico, acolhimento e proximidade com as famílias."
       },
       {
-        "title": "Sara, Eve e equipe",
-        "text": "Apresentações, cargos, fotografias e breves biografias serão incluídos após a resposta ao questionário e a aprovação das pessoas envolvidas."
+        "title": "Cuidado que respeita cada história",
+        "text": "Cada morador chega com sua própria trajetória, seus hábitos e suas necessidades. Por isso, o cuidado é organizado de forma individualizada, preservando vínculos, escolhas e possibilidades de participação na rotina da casa. Rotinas personalizadas são construídas a partir das necessidades de cada pessoa idosa, unindo ambiente familiar, acompanhamento técnico presente e proximidade com os familiares."
       }
     ]
   },
   {
     "slug": "servicos",
-    "title": "Serviços",
-    "eyebrow": "Modalidades de atendimento",
-    "description": "Conheça as modalidades atualmente informadas pela Gaia. Detalhes e condições ainda serão validados.",
-    "sections": []
+    "title": "Modalidades de cuidado",
+    "eyebrow": "Formas de acolher",
+    "description": "Na Gaia, a modalidade é definida em conjunto com a família, considerando suas necessidades, o período desejado e a adaptação da pessoa idosa.",
+    "sections": [
+      {
+        "title": "Um formato para cada momento da família",
+        "text": "É possível frequentar somente um dia, participar algumas vezes por semana, permanecer temporariamente ou fazer da Gaia sua nova residência. A modalidade é definida em conjunto com a família, considerando suas necessidades, o período desejado e a adaptação da pessoa idosa."
+      },
+      {
+        "title": "Acolhimento individualizado",
+        "text": "A Gaia é uma residência para idosos e atende moradores com graus de dependência I, II e III. A casa está preparada para avaliar o acolhimento de idosos independentes ou que convivam com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer e outras condições. Cada possibilidade é conversada individualmente com a família."
+      }
+    ]
   },
   {
     "slug": "servicos/longa-permanencia",
     "title": "Longa permanência",
     "eyebrow": "Moradia contínua",
-    "description": "Uma opção de moradia contínua com convivência, rotina e cuidado.",
+    "description": "Para a pessoa idosa que fará da Gaia sua residência, contando continuamente com estrutura, cuidado, convivência e acompanhamento em um ambiente acolhedor.",
     "sections": [
-      { "title": "Para quem é", "text": "Perfil atendido e graus de dependência serão confirmados por Sara e Eve." },
-      { "title": "O que está incluído", "text": "Rotina, alimentação, profissionais, atividades, lavanderia e demais inclusões aguardam validação." }
+      {
+        "title": "Como funciona a longa permanência",
+        "text": "A moradia de longa permanência oferece assistência contínua e cuidado humanizado em tempo integral, com rotinas personalizadas organizadas a partir das necessidades de cada pessoa idosa. O morador conta continuamente com estrutura, cuidado, convivência e acompanhamento em um ambiente acolhedor."
+      },
+      {
+        "title": "Cuidado, saúde e convivência",
+        "text": "Inclui enfermagem e cuidados 24 horas, visita médica mensal com evolução e receitas, serviço de telemedicina, acompanhamento nutricional com seis refeições diárias, programa de hidratação, organização segura de medicamentos em blister mensal, lavanderia completa e ampla área externa para contato com a natureza."
+      }
     ]
   },
   {
     "slug": "servicos/moradia-temporaria",
     "title": "Moradia temporária",
     "eyebrow": "Estadia por período",
-    "description": "Uma alternativa para períodos determinados, conforme avaliação e disponibilidade.",
+    "description": "Permite que a pessoa idosa permaneça na Gaia por alguns dias ou semanas, inclusive durante viagens e férias da família ou como uma experiência de adaptação antes de uma decisão definitiva.",
     "sections": [
-      { "title": "Quando pode fazer sentido", "text": "Situações indicadas, período mínimo e máximo e condições de admissão serão confirmados." },
-      { "title": "O que está incluído", "text": "Inclusões e cobranças adicionais aguardam a resposta ao questionário." }
+      {
+        "title": "Quando pode fazer sentido",
+        "text": "A moradia temporária permite que a pessoa idosa permaneça na Gaia por alguns dias ou semanas, inclusive durante viagens e férias da família ou como uma experiência de adaptação antes de uma decisão definitiva."
+      },
+      {
+        "title": "Estrutura e assistência integral",
+        "text": "Durante todo o período da estadia temporária, o hóspede tem acesso à mesma rotina de cuidados, acompanhamento 24h, alimentação balanceada, atividades diárias e acolhimento oferecidos aos moradores contínuos."
+      }
     ]
   },
   {
     "slug": "servicos/centro-dia",
     "title": "Centro-dia",
     "eyebrow": "Convivência durante o dia",
-    "description": "Atividades e cuidado durante o dia, com retorno para casa ao final do período.",
+    "description": "Possibilita que a pessoa idosa frequente a Gaia durante o dia, uma vez ou mais por semana, participando da rotina, da alimentação, dos cuidados e das atividades, sem precisar morar na residência.",
     "sections": [
-      { "title": "Como funciona", "text": "Dias, horários, frequência, alimentação e transporte ainda serão validados." },
-      { "title": "Atividades", "text": "A programação atual e a frequência de cada atividade serão confirmadas por Sara e Eve." }
+      {
+        "title": "Como funciona o centro-dia",
+        "text": "Possibilita que a pessoa idosa frequente a Gaia durante o dia, uma vez ou mais por semana, participando da rotina, da alimentação, dos cuidados e das atividades, sem precisar morar na residência."
+      },
+      {
+        "title": "Rotina e estímulo diário",
+        "text": "O idoso usufrui das refeições do período, acompanhamento de enfermagem e participa da programação de fisioterapia, educação física sênior, arteterapia, musicoterapia, passeios e banho de sol ao ar livre."
+      }
     ]
   },
   {
     "slug": "estrutura",
     "title": "Estrutura e acomodações",
     "eyebrow": "Conheça a Gaia",
-    "description": "Ambientes reais da Gaia, com fotos extraídas do site atual e organizadas para substituição simples.",
+    "description": "Conforto, privacidade e convivência em uma casa acolhedora em Curitiba.",
     "sections": [
-      { "title": "Quartos", "text": "O site atual menciona suítes, quartos individuais e duplos. Quantidade, capacidade e itens oferecidos serão confirmados." },
-      { "title": "Acessibilidade e segurança", "text": "Recursos disponíveis serão descritos apenas depois da validação técnica e operacional." }
+      {
+        "title": "Conforto, privacidade e convivência",
+        "text": "A Gaia possui suítes individuais e quartos individuais ou duplos. Os ambientes são organizados para favorecer conforto, segurança e convivência, com ar-condicionado quente e frio, internet, monitoramento por câmeras e uma ampla área externa para momentos de lazer e contato com a natureza."
+      },
+      {
+        "title": "Disponibilidade e visita",
+        "text": "A disponibilidade das acomodações é informada durante o contato com a família, pois pode variar conforme a ocupação da casa. Agende uma visita para conhecer de perto nossos ambientes e áreas verdes."
+      }
     ]
   },
   {
     "slug": "duvidas",
     "title": "Dúvidas frequentes",
     "eyebrow": "Informação com clareza",
-    "description": "Respostas iniciais para orientar famílias. A versão final depende da validação da Gaia.",
+    "description": "Informação com clareza para decidir com tranquilidade sobre modalidades, rotinas, cuidados e estrutura da Gaia.",
     "sections": []
   },
   {
     "slug": "contato",
     "title": "Entre em contato",
     "eyebrow": "Vamos conversar",
-    "description": "Fale com a Gaia pelo WhatsApp ou envie seus dados para solicitar um retorno.",
+    "description": "Cada pessoa idosa e cada família vivem um momento diferente. Entre em contato para conhecer a Gaia, conversar sobre as necessidades atuais e entender qual modalidade faz mais sentido.",
     "sections": []
   },
   {
     "slug": "conteudos",
     "title": "Conteúdos para famílias",
     "eyebrow": "Informação para decidir melhor",
-    "description": "Área preparada para futuros artigos de orientação e SEO local.",
+    "description": "Artigos e informações para apoiar famílias no processo de escolha de cuidados e residência para a pessoa idosa.",
     "sections": [
-      { "title": "Pautas iniciais", "text": "Como escolher uma residência para idosos; diferenças entre longa permanência, moradia temporária e centro-dia; o que observar em uma visita; valores e inclusões." }
+      {
+        "title": "Apoio e orientação para a família",
+        "text": "Dicas e esclarecimentos sobre como identificar a necessidade de apoio, as diferenças entre as modalidades de cuidado, o que avaliar durante uma visita e como garantir uma rotina segura, estimulante e acolhedora para quem você ama."
+      }
     ]
   }
 ]

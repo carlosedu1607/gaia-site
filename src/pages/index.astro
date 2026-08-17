@@ -9,8 +9,10 @@ import site from "../content/site.json";
 ---
 
 <BaseLayout>
+  <!-- 1. Banner Principal (Hero) -->
   <Hero />
 
+  <!-- 2. Faixa de Confiança -->
   <section class="trust-strip" aria-label="Informações sobre a Gaia">
     <div class="container trust-grid">
       {site.trust.map((item) => (
@@ -19,10 +21,8 @@ import site from "../content/site.json";
     </div>
   </section>
 
-  <Services />
-  <Gallery />
-
-  <section class="section care-section">
+  <!-- 3. Seção “A Gaia” -->
+  <section class="section care-section" id="a-gaia">
     <div class="container split-layout">
       <div class="split-media">
         <picture>
@@ -30,39 +30,171 @@ import site from "../content/site.json";
         </picture>
       </div>
       <div class="split-copy">
-        <p class="eyebrow">Acolhimento com respeito</p>
-        <h2>Cuidado que respeita cada história</h2>
-        <p>A proposta da Gaia combina convivência, ambiente acolhedor e atenção às necessidades de cada pessoa. Os detalhes da rotina e da equipe serão atualizados após a validação de Sara e Eve.</p>
-        <ul class="check-list">
-          {site.differentials.map((item) => <li>{item}</li>)}
-        </ul>
+        <p class="eyebrow">A Gaia</p>
+        <h2>{site.about.title}</h2>
+        <p>{site.about.text1}</p>
+        <p>{site.about.text2}</p>
+        <div class="sub-care">
+          <h3>{site.about.subtitle}</h3>
+          <p>{site.about.subtext}</p>
+          <ul class="check-list">
+            {site.about.highlights.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
         <a class="button button-secondary" href="/a-gaia/">Conhecer nossa história</a>
       </div>
     </div>
   </section>
 
-  <section class="section process-section">
+  <!-- 4. Modalidades de Cuidado -->
+  <Services />
+
+  <!-- 5. Acolhimento Individualizado -->
+  <section class="section individualized-section" id="acolhimento">
+    <div class="container">
+      <div class="individual-card">
+        <p class="eyebrow">{site.individualizedCare.eyebrow}</p>
+        <h2>{site.individualizedCare.title}</h2>
+        <p>{site.individualizedCare.text1}</p>
+        <p>{site.individualizedCare.text2}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Quando a Família Percebe que Precisa de Apoio -->
+  <section class="section support-section" id="apoio-familia">
+    <div class="container">
+      <div class="support-header">
+        <p class="eyebrow">{site.familySupport.eyebrow}</p>
+        <h2>{site.familySupport.title}</h2>
+        <p class="lead-text">{site.familySupport.opening}</p>
+      </div>
+      <div class="support-body">
+        <div class="support-situations">
+          <h3>{site.familySupport.situationsTitle}</h3>
+          <ul class="support-list">
+            {site.familySupport.situations.map((item) => (
+              <li>
+                <span class="support-bullet" aria-hidden="true">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="support-closing">
+          <p>{site.familySupport.closing}</p>
+          <a
+            class="button button-whatsapp"
+            href={`https://wa.me/${site.contact.whatsappDigits}?text=${encodeURIComponent("Olá! Gostaria de conversar com a Gaia sobre o momento e o apoio que minha família precisa.")}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="/icons/whatsapp-enviado.png" alt="" aria-hidden="true" width="26" height="26" class="button-whatsapp-icon" />
+            <span>{site.familySupport.cta}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Cuidado e Serviços Oferecidos -->
+  <section class="section services-offered-section" id="servicos-oferecidos">
     <div class="container">
       <div class="section-heading">
-        <div><p class="eyebrow light">Primeiro contato</p><h2>Como funciona</h2></div>
-        <p>Um caminho simples para conhecer a Gaia e entender a modalidade mais adequada.</p>
+        <div>
+          <p class="eyebrow">{site.servicesOffered.eyebrow}</p>
+          <h2>{site.servicesOffered.title}</h2>
+        </div>
+        <p>{site.servicesOffered.opening}</p>
       </div>
-      <div class="process-grid">
-        {site.process.map((item) => (
-          <article><span>{item.step}</span><h3>{item.title}</h3><p>{item.text}</p></article>
+      <div class="pillars-grid">
+        {site.servicesOffered.pillars.map((pillar) => (
+          <article class="pillar-card">
+            <h3>{pillar.title}</h3>
+            <ul class="pillar-list">
+              {pillar.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- 8. Rotina, Alimentação e Atividades -->
+  <section class="section routine-section" id="rotina">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">{site.routine.eyebrow}</p>
+          <h2>Uma rotina com cuidado, sabor e convivência</h2>
+        </div>
+      </div>
+      <div class="routine-grid">
+        <article class="routine-card">
+          <h3>{site.routine.block1Title}</h3>
+          <p>{site.routine.block1Text}</p>
+        </article>
+        <article class="routine-card">
+          <h3>{site.routine.block2Title}</h3>
+          <p>{site.routine.block2Text}</p>
+        </article>
+        <article class="routine-card activities-card">
+          <h3>{site.routine.block3Title}</h3>
+          <p>{site.routine.block3Text}</p>
+          <ul class="activities-list">
+            {site.routine.activities.map((act) => <li>{act}</li>)}
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Estrutura e Acomodações -->
+  <section class="section structure-intro-section" id="acomodacoes">
+    <div class="container">
+      <div class="structure-card">
+        <p class="eyebrow">{site.structure.eyebrow}</p>
+        <h2>{site.structure.title}</h2>
+        <p>{site.structure.text1}</p>
+        <p>{site.structure.text2}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Galeria de Ambientes Reais -->
+  <Gallery />
+
+  <!-- 11. Como Funciona -->
+  <section class="section process-section" id="como-funciona">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow light">{site.process.eyebrow}</p>
+          <h2>{site.process.title}</h2>
+        </div>
+      </div>
+      <div class="process-grid">
+        {site.process.steps.map((item) => (
+          <article>
+            <span>{item.step}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Carrossel do Instagram -->
   <InstagramCarousel />
 
-  <section class="section faq-section">
+  <!-- 13. Dúvidas Frequentes -->
+  <section class="section faq-section" id="duvidas">
     <div class="container faq-layout">
       <div>
         <p class="eyebrow">Dúvidas frequentes</p>
         <h2>Informação para decidir com tranquilidade</h2>
-        <p>Estas respostas são preliminares e serão substituídas pelas informações confirmadas por Sara e Eve.</p>
+        <p>Tire suas dúvidas sobre modalidades, cuidados, rotinas e como escolher a melhor opção com a Gaia.</p>
         <a class="text-link" href="/duvidas/">Ver todas as dúvidas <span aria-hidden="true">→</span></a>
       </div>
       <div class="accordion">
@@ -76,5 +208,6 @@ import site from "../content/site.json";
     </div>
   </section>
 
+  <!-- 14. Contato e Chamada Final -->
   <ContactForm />
 </BaseLayout>

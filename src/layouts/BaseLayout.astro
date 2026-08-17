@@ -17,13 +17,16 @@ const {
   noindex = false
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
-const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE !== "false";
+const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE === "true";
 const fullTitle = title === site.seo.title ? title : `${title} | ${site.brand.shortName}`;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: site.brand.name,
+  legalName: site.brand.legalName,
+  taxID: site.brand.cnpj,
+  description: site.seo.description,
   url: canonical.origin,
   telephone: site.contact.phoneDisplay,
   address: {
@@ -31,6 +34,7 @@ const structuredData = {
     streetAddress: site.contact.addressLine,
     addressLocality: site.contact.city,
     addressRegion: site.contact.state,
+    postalCode: site.contact.postalCode,
     addressCountry: "BR"
   },
   sameAs: [site.contact.instagramUrl]
@@ -57,6 +61,10 @@ const structuredData = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL("/media/site/fachada-1600.webp", canonical.origin)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL("/media/site/fachada-1600.webp", canonical.origin)} />
     <title>{fullTitle}</title>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>

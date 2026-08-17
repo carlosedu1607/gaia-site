@@ -1,19 +1,39 @@
 ---
 import site from "../content/site.json";
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
-const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE !== "false";
+const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE === "true";
 ---
 
 <section class="section contact-section" id="contato">
   <div class="container contact-grid">
     <div class="contact-copy">
-      <p class="eyebrow light">Vamos conversar</p>
-      <h2>Agende uma visita à Gaia</h2>
-      <p>Envie seus dados ou chame pelo WhatsApp. Neste primeiro contato, não informe diagnósticos, prontuários ou outros dados médicos.</p>
+      <p class="eyebrow light">{site.contactSection.eyebrow}</p>
+      <h2>{site.contactSection.title}</h2>
+      <p>{site.contactSection.text}</p>
+      <div class="button-group contact-hero-actions">
+        <a
+          class="button button-whatsapp"
+          href={`https://wa.me/${site.contact.whatsappDigits}?text=${encodeURIComponent("Olá! Gostaria de conversar com a Gaia sobre o cuidado para a minha família.")}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/icons/whatsapp-enviado.png" alt="" aria-hidden="true" width="26" height="26" class="button-whatsapp-icon" />
+          <span>{site.contactSection.secondaryCta}</span>
+        </a>
+      </div>
       <ul class="contact-list">
-        <li><strong>WhatsApp</strong><a href={`https://wa.me/${site.contact.whatsappDigits}`}>{site.contact.whatsappDisplay}</a></li>
-        <li><strong>Endereço</strong><a href={site.contact.mapsUrl} target="_blank" rel="noreferrer">{site.contact.addressLine}, {site.contact.district}</a></li>
-        <li><strong>Atendimento</strong><span>{site.contact.businessHours}</span></li>
+        <li>
+          <strong>WhatsApp</strong>
+          <a href={`https://wa.me/${site.contact.whatsappDigits}`}>{site.contact.whatsappDisplay}</a>
+        </li>
+        <li>
+          <strong>Endereço</strong>
+          <a href={site.contact.mapsUrl} target="_blank" rel="noreferrer">{site.contact.fullAddress}</a>
+        </li>
+        <li>
+          <strong>Atendimento</strong>
+          <span>{site.contact.businessHours}</span>
+        </li>
       </ul>
     </div>
     <form class="contact-form" action="/api/lead" method="post" data-contact-form>
@@ -50,7 +70,7 @@ const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE !== "false";
         <input type="checkbox" name="consent" required />
         <span>Autorizo a Gaia a usar estes dados para responder ao meu contato, conforme a <a href="/privacidade/">Política de Privacidade</a>.</span>
       </label>
-      <button class="button button-primary" type="submit" disabled={!turnstileSiteKey}>Enviar contato</button>
+      <button class="button button-primary" type="submit" disabled={!turnstileSiteKey}>Agendar uma visita</button>
       <p class="form-status" data-form-status role="status" aria-live="polite"></p>
     </form>
   </div>

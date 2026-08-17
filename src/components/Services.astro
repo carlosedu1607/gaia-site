@@ -6,10 +6,10 @@ import site from "../content/site.json";
   <div class="container">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Formas de acolher</p>
-        <h2>Nossos serviços</h2>
+        <p class="eyebrow">{site.servicesHeading.eyebrow}</p>
+        <h2>{site.servicesHeading.title}</h2>
       </div>
-      <p>Modalidades para diferentes momentos e necessidades da pessoa idosa e de sua família.</p>
+      <p>{site.servicesHeading.description}</p>
     </div>
     <div class="card-grid service-grid">
       {site.services.map((service, index) => (
@@ -20,6 +20,17 @@ import site from "../content/site.json";
           <a class="text-link" href={service.href}>Conhecer o serviço <span aria-hidden="true">→</span></a>
         </article>
       ))}
+    </div>
+    <div class="services-cta-wrapper">
+      <a
+        class="button button-whatsapp"
+        href={`https://wa.me/${site.contact.whatsappDigits}?text=${encodeURIComponent("Olá! Gostaria de conversar com a Gaia sobre as modalidades de cuidado.")}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src="/icons/whatsapp-enviado.png" alt="" aria-hidden="true" width="26" height="26" class="button-whatsapp-icon" />
+        <span>{site.servicesHeading.cta}</span>
+      </a>
     </div>
   </div>
 </section>

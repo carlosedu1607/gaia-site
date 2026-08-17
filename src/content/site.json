@@ -1,24 +1,26 @@
 {
   "project": {
-    "stage": "protótipo",
-    "contentVersion": "0.2",
-    "lastUpdated": "2026-08-15",
-    "validationOwners": ["Sara", "Eve"],
-    "notice": "Conteúdo preliminar extraído do site atual. Validar antes da publicação."
+    "stage": "producao",
+    "contentVersion": "1.0",
+    "lastUpdated": "2026-08-17",
+    "notice": "Gaia Vida Ainda — Residência para idosos em Curitiba."
   },
   "brand": {
     "name": "Gaia Vida Ainda",
+    "legalName": "GAIIA RESIDÊNCIA PARA IDOSOS LTDA",
+    "cnpj": "80.824.113/0001-40",
     "shortName": "Gaia",
-    "positioning": "Um lugar para a vida, com acolhimento, vínculos, autonomia e cuidado."
+    "positioning": "Desde 1988, a Gaia oferece acolhimento, autonomia e cuidado humanizado para pessoas idosas em Curitiba."
   },
   "seo": {
-    "title": "Gaia Vida Ainda | Residência para idosos em Curitiba",
-    "description": "Conheça a Gaia Vida Ainda, residência para idosos em Curitiba com opções de longa permanência, moradia temporária e centro-dia.",
+    "title": "Gaia Vida Ainda | Residência para Idosos em Curitiba",
+    "description": "Desde 1988, a Gaia oferece moradia de longa permanência, moradia temporária e centro-dia para idosos em Curitiba, com cuidado humanizado e atenção individualizada.",
     "keywords": [
       "residência para idosos em Curitiba",
-      "casa de repouso em Curitiba",
-      "centro-dia para idosos",
-      "moradia temporária para idosos"
+      "casa para idosos em Curitiba",
+      "moradia de longa permanência para idosos",
+      "centro-dia para idosos Curitiba",
+      "moradia temporária para idosos Curitiba"
     ]
   },
   "contact": {
@@ -26,14 +28,13 @@
     "district": "Vista Alegre",
     "city": "Curitiba",
     "state": "PR",
-    "postalCode": "",
+    "fullAddress": "Rua do Amapá, 101 - Vista Alegre, Curitiba - PR",
+    "postalCode": "80810-040",
     "whatsappDisplay": "(41) 99824-0327",
     "whatsappDigits": "5541998240327",
-    "phoneDisplay": "(41) 99824-0327",
-    "currentEmail": "gaia_264@hotmail.com",
-    "professionalEmail": "DEFINIR_APOS_CONTRATACAO",
+    "phoneDisplay": "+55 41 99824-0327",
+    "currentEmail": "contato@gaiaresidenciaparaidosos.com.br",
     "businessHours": "Segunda a sexta, das 8h às 18h",
-    "businessHoursReview": "confirmar horário comercial definitivo",
     "instagramUrl": "https://www.instagram.com/gaiaresidenciaparaidosos/",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+do+Amapa+101+Vista+Alegre+Curitiba+PR"
   },
@@ -46,77 +47,235 @@
     { "label": "Contato", "href": "/contato/" }
   ],
   "hero": {
-    "eyebrow": "Desde 1988",
-    "eyebrowReview": "confirmar ano exato de fundação",
-    "title": "Um lugar para a vida, com acolhimento e cuidado.",
-    "text": "Há mais de três décadas, a Gaia oferece convivência, segurança e qualidade de vida para pessoas idosas e suas famílias.",
+    "eyebrow": "RESIDÊNCIA PARA IDOSOS EM CURITIBA",
+    "title": "Um lugar para a vida, com acolhimento e cuidado",
+    "text": "Em um ambiente familiar, a Gaia une acompanhamento técnico, rotinas personalizadas e proximidade com as famílias para oferecer às pessoas idosas cuidado com respeito e acolhimento.",
     "primaryCta": "Agendar uma visita",
     "secondaryCta": "Falar no WhatsApp"
   },
   "trust": [
-    { "value": "1988", "label": "Ano de fundação", "review": "confirmar fundação em 1988" },
-    { "value": "3", "label": "Modalidades de atendimento" },
-    { "value": "Curitiba", "label": "Bairro Vista Alegre" }
+    { "value": "Desde 1988", "label": "Acolhimento e tradição" },
+    { "value": "Três modalidades", "label": "De cuidado para cada momento" },
+    { "value": "Curitiba - PR", "label": "Bairro Vista Alegre" }
   ],
+  "about": {
+    "title": "Uma casa para viver com cuidado, autonomia e pertencimento.",
+    "text1": "Gaia significa “Mãe Terra”. Desde agosto de 1988, a casa acolhe pessoas idosas e acompanha histórias que atravessam gerações. Sua origem nasceu de uma necessidade familiar e doméstica e, ao longo das décadas, transformou-se em um espaço de cuidado, convivência e respeito à individualidade.",
+    "text2": "Hoje, a Gaia promove autonomia e qualidade de vida por meio de rotinas personalizadas, em um ambiente familiar que combina rigor técnico, acolhimento e proximidade com as famílias.",
+    "subtitle": "Cuidado que respeita cada história",
+    "subtext": "Cada morador chega com sua própria trajetória, seus hábitos e suas necessidades. Por isso, o cuidado é organizado de forma individualizada, preservando vínculos, escolhas e possibilidades de participação na rotina da casa.",
+    "highlights": [
+      "Rotinas personalizadas, construídas a partir das necessidades de cada pessoa idosa.",
+      "Ambiente familiar, com convivência próxima e acolhedora.",
+      "Acompanhamento técnico presente na rotina de cuidado.",
+      "Proximidade e comunicação com as famílias."
+    ]
+  },
+  "servicesHeading": {
+    "eyebrow": "MODALIDADES DE CUIDADO",
+    "title": "Um formato para cada momento da família.",
+    "description": "Na Gaia, a modalidade é definida em conjunto com a família, considerando suas necessidades, o período desejado e a adaptação da pessoa idosa. É possível frequentar somente um dia, participar algumas vezes por semana, permanecer temporariamente ou fazer da Gaia sua nova residência.",
+    "cta": "Conversar com a Gaia"
+  },
   "services": [
     {
       "id": "longa-permanencia",
       "title": "Longa permanência",
-      "description": "Moradia contínua em ambiente acolhedor, com rotina e cuidado adaptados às necessidades de cada pessoa.",
-      "href": "/servicos/longa-permanencia/",
-      "status": "validar indicação, inclusões e perfil atendido"
+      "description": "Para a pessoa idosa que fará da Gaia sua residência, contando continuamente com estrutura, cuidado, convivência e acompanhamento em um ambiente acolhedor.",
+      "href": "/servicos/longa-permanencia/"
     },
     {
       "id": "moradia-temporaria",
       "title": "Moradia temporária",
-      "description": "Estadia por período determinado, pensada para oferecer segurança, convivência e apoio à família.",
-      "href": "/servicos/moradia-temporaria/",
-      "status": "validar período, condições e inclusões"
+      "description": "Permite que a pessoa idosa permaneça na Gaia por alguns dias ou semanas, inclusive durante viagens e férias da família ou como uma experiência de adaptação antes de uma decisão definitiva.",
+      "href": "/servicos/moradia-temporaria/"
     },
     {
       "id": "centro-dia",
       "title": "Centro-dia",
-      "description": "Atividades, convivência e cuidado durante o dia, com retorno para casa ao final do período.",
-      "href": "/servicos/centro-dia/",
-      "status": "validar dias, horários e funcionamento"
+      "description": "Possibilita que a pessoa idosa frequente a Gaia durante o dia, uma vez ou mais por semana, participando da rotina, da alimentação, dos cuidados e das atividades, sem precisar morar na residência.",
+      "href": "/servicos/centro-dia/"
     }
   ],
-  "differentials": [
-    "História de cuidado e convivência dedicada à pessoa idosa",
-    "Ambientes internos e externos integrados para encontros e bem-estar",
-    "Acomodações acolhedoras pensadas para conforto e privacidade",
-    "Atenção diária à alimentação, hidratação e rotina de atividades",
-    "Relacionamento próximo e transparente com os familiares"
-  ],
-  "differentialsValidation": [
-    "Validar ano de fundação 1988",
-    "Confirmar capacidade de acomodações individuais e duplas",
-    "Validar detalhes da rotina de atividades e hidratação",
-    "Validar fluxo de contato com familiares"
-  ],
-  "process": [
-    { "step": "1", "title": "Primeiro contato", "text": "Conte brevemente o que sua família procura, sem enviar dados médicos sensíveis." },
-    { "step": "2", "title": "Visita à Gaia", "text": "Agendamos um horário para conhecer a estrutura e conversar com tranquilidade." },
-    { "step": "3", "title": "Avaliação das necessidades", "text": "A equipe entende o contexto e verifica a modalidade mais adequada." },
-    { "step": "4", "title": "Proposta e próximos passos", "text": "A família recebe as orientações, condições e documentos necessários." }
-  ],
-  "testimonials": [],
+  "individualizedCare": {
+    "eyebrow": "ACOLHIMENTO INDIVIDUALIZADO",
+    "title": "Cada pessoa idosa é recebida a partir de suas necessidades.",
+    "text1": "A Gaia é uma residência para idosos e atende moradores com graus de dependência I, II e III. A casa está preparada para avaliar o acolhimento de idosos independentes ou que convivam com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer e outras condições.",
+    "text2": "Cada possibilidade de acolhimento é conversada individualmente com a família, para compreender a história, a rotina e as necessidades de cuidado do futuro morador."
+  },
+  "familySupport": {
+    "eyebrow": "APOIO À FAMÍLIA",
+    "title": "Quando a família percebe que precisa de apoio",
+    "opening": "Cuidar de quem amamos pode trazer dúvidas, cansaço e insegurança. Em alguns momentos, a família percebe que precisa de apoio para preservar a segurança, a rotina e a qualidade de vida da pessoa idosa.",
+    "situationsTitle": "A Gaia pode ajudar quando a família enfrenta situações como:",
+    "situations": [
+      "Necessidade de supervisão e companhia ao longo do dia;",
+      "Dificuldades com alimentação, medicamentos, higiene ou mobilidade;",
+      "Alterações de memória, humor ou comportamento;",
+      "Sobrecarga física e emocional de quem participa dos cuidados;",
+      "Necessidade de uma rotina mais segura, organizada e acompanhada."
+    ],
+    "closing": "Na Gaia, cada morador recebe cuidado individualizado, acompanhamento 24 horas e uma rotina construída a partir de suas necessidades. Além de cuidar da pessoa idosa, a casa oferece apoio e tranquilidade para que a família possa viver essa nova etapa com mais segurança.",
+    "cta": "Conversar com a Gaia"
+  },
+  "servicesOffered": {
+    "eyebrow": "CUIDADO E SERVIÇOS",
+    "title": "Cuidado presente em todos os momentos.",
+    "opening": "A Gaia reúne acompanhamento profissional, organização da rotina, alimentação, atividades e uma estrutura preparada para oferecer segurança, conforto e qualidade de vida. As condições de cada modalidade são apresentadas durante a conversa com a família.",
+    "pillars": [
+      {
+        "title": "Saúde e cuidado diário",
+        "items": [
+          "Enfermagem e cuidados 24 horas.",
+          "Visita médica mensal, incluindo receitas e registros de evolução.",
+          "Serviço de telemedicina disponível ao longo do mês.",
+          "Programa de hidratação.",
+          "Prontuário eletrônico.",
+          "Ambulância para transporte em situações de urgência e emergência."
+        ]
+      },
+      {
+        "title": "Organização segura das medicações",
+        "items": [
+          "Convênio farmacêutico.",
+          "Empresa especializada em blister mensal para organização, separação e manuseio seguro das medicações."
+        ]
+      },
+      {
+        "title": "Alimentação e bem-estar",
+        "items": [
+          "Seis refeições diárias, com comida caseira e preparada na própria casa.",
+          "Acompanhamento nutricional individualizado.",
+          "Cardápios mensais variados.",
+          "Opções adaptadas para pessoas que necessitam de dietas restritivas."
+        ]
+      },
+      {
+        "title": "Conforto e estrutura",
+        "items": [
+          "Lavanderia completa para roupas pessoais, de cama e de banho.",
+          "Estrutura segura, confortável e monitorada por câmeras.",
+          "Ar-condicionado quente e frio.",
+          "Internet.",
+          "Ampla área externa para lazer e contato com a natureza."
+        ]
+      }
+    ]
+  },
+  "routine": {
+    "eyebrow": "ROTINA, ALIMENTAÇÃO E ATIVIDADES",
+    "block1Title": "Uma rotina segura, com espaço para novas experiências",
+    "block1Text": "Os horários e a rotina de alimentação são mantidos ao longo de toda a semana, trazendo previsibilidade e segurança. O que muda são as atividades, organizadas de forma diversificada para estimular movimento, convivência, expressão e bem-estar.",
+    "block2Title": "Comida caseira e cuidado nutricional",
+    "block2Text": "A alimentação é preparada na própria casa e distribuída em seis refeições diárias. Os cardápios mensais são variados, contam com acompanhamento de nutricionista e podem ser adaptados para pessoas que necessitam de dietas restritivas.",
+    "block3Title": "Atividades para corpo, mente e convivência",
+    "block3Text": "A Gaia oferece uma programação diária e diversificada, respeitando o interesse, a disposição e as possibilidades de participação de cada morador.",
+    "activities": [
+      "Fisioterapia e educação física sênior.",
+      "Arteterapia e musicoterapia.",
+      "Cinema, jogos e bailes.",
+      "Celebrações religiosas.",
+      "Passeios e caminhadas matinais.",
+      "Banho de sol e atividades ao ar livre.",
+      "Comemorações de datas festivas."
+    ]
+  },
+  "structure": {
+    "eyebrow": "ESTRUTURA E ACOMODAÇÕES",
+    "title": "Conforto, privacidade e convivência em uma casa acolhedora.",
+    "text1": "A Gaia possui suítes individuais e quartos individuais ou duplos. Os ambientes são organizados para favorecer conforto, segurança e convivência, com ar-condicionado quente e frio, internet, monitoramento por câmeras e uma ampla área externa para momentos de lazer e contato com a natureza.",
+    "text2": "A disponibilidade das acomodações é informada durante o contato com a família, pois pode variar conforme a ocupação da casa."
+  },
+  "gallery": {
+    "eyebrow": "AMBIENTES REAIS",
+    "title": "Conheça a Gaia",
+    "description": "Conheça os ambientes, a área externa e os espaços que fazem parte da rotina da Gaia. Cada detalhe foi pensado para favorecer segurança, conforto, convivência e contato com a natureza."
+  },
+  "process": {
+    "eyebrow": "COMO FUNCIONA",
+    "title": "Uma escolha construída junto com a família.",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Converse com a Gaia",
+        "text": "Conte o que a família procura, o período desejado e as necessidades da pessoa idosa que será acolhida."
+      },
+      {
+        "step": "2",
+        "title": "Agende uma visita",
+        "text": "Conheça a casa, os ambientes, a rotina e a forma de cuidado da Gaia."
+      },
+      {
+        "step": "3",
+        "title": "Defina a modalidade",
+        "text": "Longa permanência, moradia temporária ou centro-dia são avaliados conforme o momento da família, as necessidades e a adaptação da pessoa idosa."
+      },
+      {
+        "step": "4",
+        "title": "Planeje a chegada",
+        "text": "Após a definição do formato e a avaliação individual, a equipe alinha com a família os próximos passos para uma chegada acolhedora."
+      }
+    ]
+  },
   "faq": [
     {
-      "question": "Quais modalidades de atendimento a Gaia oferece?",
-      "answer": "A Gaia dispõe de opções de longa permanência, moradia temporária e centro-dia. Nossa equipe apresentará os detalhes de cada modalidade conforme as necessidades da sua família."
+      "question": "Quais modalidades a Gaia oferece?",
+      "answer": "A Gaia oferece moradia de longa permanência, moradia temporária e centro-dia para pessoas idosas."
     },
     {
-      "question": "Como faço para conhecer a Gaia?",
-      "answer": "Você pode iniciar o contato pelo WhatsApp ou preencher o formulário para agendarmos uma visita guiada às nossas instalações."
+      "question": "Como a família escolhe a modalidade?",
+      "answer": "A escolha é feita em conjunto com a Gaia, considerando a necessidade da família, o período desejado, a rotina, as necessidades de cuidado e a adaptação da pessoa idosa."
+    },
+    {
+      "question": "Quem pode morar na Gaia?",
+      "answer": "A Gaia é uma residência para idosos e acolhe moradores com diferentes necessidades e graus de dependência. Cada caso passa por uma avaliação individual, realizada em conjunto com a família, antes do acolhimento."
+    },
+    {
+      "question": "Quais graus de dependência são atendidos?",
+      "answer": "A Gaia atende pessoas idosas com graus de dependência I, II e III, sempre considerando as necessidades individuais e a avaliação realizada antes do acolhimento."
+    },
+    {
+      "question": "A Gaia pode acolher idosos com Alzheimer, demência ou outras condições?",
+      "answer": "A Gaia pode avaliar o acolhimento de idosos com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer e outras condições. Cada caso é analisado individualmente para compreender as necessidades do futuro morador e garantir o cuidado adequado."
+    },
+    {
+      "question": "É possível permanecer na Gaia somente durante uma viagem da família?",
+      "answer": "Sim. A moradia temporária permite permanências por alguns dias ou semanas, conforme a necessidade da família, a avaliação individual e a disponibilidade da Gaia."
+    },
+    {
+      "question": "É possível frequentar a Gaia apenas alguns dias por semana?",
+      "answer": "Sim. O centro-dia permite participar da rotina, da alimentação, dos cuidados e das atividades uma ou mais vezes por semana, sem precisar morar na residência."
+    },
+    {
+      "question": "Como funciona a alimentação?",
+      "answer": "São oferecidas seis refeições diárias, preparadas na própria casa, com cardápios acompanhados por nutricionista e adaptações para dietas restritivas."
+    },
+    {
+      "question": "Quais atividades são oferecidas?",
+      "answer": "A programação inclui fisioterapia, educação física sênior, arteterapia, musicoterapia, cinema, jogos, bailes, celebrações religiosas, passeios, caminhadas, banho de sol e comemorações."
+    },
+    {
+      "question": "A Gaia oferece acompanhamento de saúde?",
+      "answer": "A casa conta com enfermagem e cuidados 24 horas, visita médica mensal, telemedicina ao longo do mês, acompanhamento nutricional, programa de hidratação e prontuário eletrônico."
+    },
+    {
+      "question": "Como são organizadas as medicações?",
+      "answer": "A Gaia possui convênio farmacêutico e utiliza serviço especializado em blister mensal para auxiliar na organização, separação e segurança das medicações."
+    },
+    {
+      "question": "Quais acomodações estão disponíveis?",
+      "answer": "A casa possui suítes individuais e quartos individuais ou duplos. A disponibilidade é confirmada durante o contato com a família."
     },
     {
       "question": "Os valores aparecem no site?",
-      "answer": "O plano de atendimento e os valores são personalizados conforme a modalidade escolhida e as necessidades de assistência. Converse conosco para receber uma orientação completa."
-    },
-    {
-      "question": "Quais tipos de quartos existem?",
-      "answer": "A estrutura conta com suítes e quartos individuais ou compartilhados, equipados para garantir conforto, segurança e acessibilidade."
+      "answer": "Não. Os valores e as condições de cada modalidade são apresentados durante a conversa com a família."
     }
-  ]
+  ],
+  "contactSection": {
+    "eyebrow": "VAMOS CONVERSAR",
+    "title": "Vamos conversar sobre o cuidado que sua família precisa?",
+    "text": "Cada pessoa idosa e cada família vivem um momento diferente. Entre em contato para conhecer a Gaia, conversar sobre as necessidades atuais e entender qual modalidade faz mais sentido.",
+    "primaryCta": "Agendar uma visita",
+    "secondaryCta": "Falar no WhatsApp"
+  }
 }
