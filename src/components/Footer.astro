@@ -14,7 +14,7 @@ import site from "../content/site.json";
         {site.contact.addressLine}<br />
         {site.contact.district} — {site.contact.city}/{site.contact.state}
       </address>
-      <a href={`https://wa.me/${site.contact.whatsappDigits}`}>{site.contact.whatsappDisplay}</a>
+      <a href={`https://wa.me/${site.contact.whatsappDigits}`} target="_blank" rel="noreferrer" data-event="footer_whatsapp">{site.contact.whatsappDisplay}</a>
     </div>
     <div>
       <h2>Links</h2>

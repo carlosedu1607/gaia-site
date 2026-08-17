@@ -23,11 +23,11 @@
     "sections": [
       {
         "title": "Um formato para cada momento da família",
-        "text": "É possível frequentar somente um dia, participar algumas vezes por semana, permanecer temporariamente ou fazer da Gaia sua nova residência. A modalidade é definida em conjunto com a família, considerando suas necessidades, o período desejado e a adaptação da pessoa idosa."
+        "text": "Na Gaia, a modalidade é definida em conjunto com a família, considerando suas necessidades, o período desejado e a adaptação da pessoa idosa. É possível frequentar durante o dia, permanecer por alguns dias ou semanas, contar com apoio durante a recuperação pós-operatória ou fazer da Gaia sua nova residência."
       },
       {
         "title": "Acolhimento individualizado",
-        "text": "A Gaia é uma residência para idosos e atende moradores com graus de dependência I, II e III. A casa está preparada para avaliar o acolhimento de idosos independentes ou que convivam com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer e outras condições. Cada possibilidade é conversada individualmente com a família."
+        "text": "A Gaia é uma residência para idosos e atende moradores com graus de dependência I, II e III. A casa está preparada para o acolhimento de idosos independentes ou que convivam com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer, doença de Parkinson e outras condições. Cada acolhimento é conversado individualmente com a família."
       }
     ]
   },
@@ -80,6 +80,22 @@
     ]
   },
   {
+    "slug": "servicos/pos-operatorio",
+    "title": "Pós-operatório",
+    "eyebrow": "Apoio na recuperação",
+    "description": "Para idosos que precisam de apoio e cuidados durante a recuperação após uma cirurgia, com acolhimento, cuidados 24 horas e rotina organizada.",
+    "sections": [
+      {
+        "title": "Apoio e acolhimento na recuperação",
+        "text": "Para idosos que precisam de apoio e cuidados durante a recuperação após uma cirurgia. A Gaia oferece acolhimento, cuidados 24 horas, alimentação e uma rotina organizada conforme as necessidades do idoso e as orientações dos profissionais de saúde responsáveis."
+      },
+      {
+        "title": "Estrutura e cuidados contínuos",
+        "text": "A Gaia acolhe idosos com rotina de enfermagem e cuidados 24 horas, organização segura de medicamentos em blister mensal, alimentação caseira adaptada e ambiente tranquilo e confortável para uma recuperação com serenidade e proximidade com a família."
+      }
+    ]
+  },
+  {
     "slug": "estrutura",
     "title": "Estrutura e acomodações",
     "eyebrow": "Conheça a Gaia",
@@ -117,7 +133,7 @@
     "sections": [
       {
         "title": "Apoio e orientação para a família",
-        "text": "Dicas e esclarecimentos sobre como identificar a necessidade de apoio, as diferenças entre as modalidades de cuidado, o que avaliar durante uma visita e como garantir uma rotina segura, estimulante e acolhedora para quem você ama."
+        "text": "Dicas e esclarecimentos sobre como identificar a necessidade de apoio, as diferenças entre as quatro modalidades de cuidado, o que avaliar durante uma visita e como garantir uma rotina segura, estimulante e acolhedora para quem você ama."
       }
     ]
   }

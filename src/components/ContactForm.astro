@@ -16,6 +16,7 @@ const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE === "true";
           href={`https://wa.me/${site.contact.whatsappDigits}?text=${encodeURIComponent("Olá! Gostaria de conversar com a Gaia sobre o cuidado para a minha família.")}`}
           target="_blank"
           rel="noreferrer"
+          data-event="contact_whatsapp"
         >
           <img src="/icons/whatsapp-enviado.png" alt="" aria-hidden="true" width="26" height="26" class="button-whatsapp-icon" />
           <span>{site.contactSection.secondaryCta}</span>
@@ -24,7 +25,7 @@ const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE === "true";
       <ul class="contact-list">
         <li>
           <strong>WhatsApp</strong>
-          <a href={`https://wa.me/${site.contact.whatsappDigits}`}>{site.contact.whatsappDisplay}</a>
+          <a href={`https://wa.me/${site.contact.whatsappDigits}`} target="_blank" rel="noreferrer" data-event="contact_list_whatsapp">{site.contact.whatsappDisplay}</a>
         </li>
         <li>
           <strong>Endereço</strong>

@@ -1,7 +1,7 @@
 {
   "project": {
     "stage": "producao",
-    "contentVersion": "1.0",
+    "contentVersion": "1.1",
     "lastUpdated": "2026-08-17",
     "notice": "Gaia Vida Ainda — Residência para idosos em Curitiba."
   },
@@ -14,13 +14,14 @@
   },
   "seo": {
     "title": "Gaia Vida Ainda | Residência para Idosos em Curitiba",
-    "description": "Desde 1988, a Gaia oferece moradia de longa permanência, moradia temporária e centro-dia para idosos em Curitiba, com cuidado humanizado e atenção individualizada.",
+    "description": "Desde 1988, a Gaia oferece longa permanência, moradia temporária, centro-dia e apoio pós-operatório para idosos em Curitiba, com cuidado humanizado.",
     "keywords": [
       "residência para idosos em Curitiba",
       "casa para idosos em Curitiba",
       "moradia de longa permanência para idosos",
       "centro-dia para idosos Curitiba",
-      "moradia temporária para idosos Curitiba"
+      "moradia temporária para idosos Curitiba",
+      "pós-operatório idosos Curitiba"
     ]
   },
   "contact": {
@@ -55,7 +56,7 @@
   },
   "trust": [
     { "value": "Desde 1988", "label": "Acolhimento e tradição" },
-    { "value": "Três modalidades", "label": "De cuidado para cada momento" },
+    { "value": "Quatro modalidades", "label": "De cuidado para cada momento" },
     { "value": "Curitiba - PR", "label": "Bairro Vista Alegre" }
   ],
   "about": {
@@ -74,7 +75,7 @@
   "servicesHeading": {
     "eyebrow": "MODALIDADES DE CUIDADO",
     "title": "Um formato para cada momento da família.",
-    "description": "Na Gaia, a modalidade é definida em conjunto com a família, considerando suas necessidades, o período desejado e a adaptação da pessoa idosa. É possível frequentar somente um dia, participar algumas vezes por semana, permanecer temporariamente ou fazer da Gaia sua nova residência.",
+    "description": "Na Gaia, a modalidade é definida em conjunto com a família, considerando suas necessidades, o período desejado e a adaptação da pessoa idosa. É possível frequentar durante o dia, permanecer por alguns dias ou semanas, contar com apoio durante a recuperação pós-operatória ou fazer da Gaia sua nova residência.",
     "cta": "Conversar com a Gaia"
   },
   "services": [
@@ -95,13 +96,19 @@
       "title": "Centro-dia",
       "description": "Possibilita que a pessoa idosa frequente a Gaia durante o dia, uma vez ou mais por semana, participando da rotina, da alimentação, dos cuidados e das atividades, sem precisar morar na residência.",
       "href": "/servicos/centro-dia/"
+    },
+    {
+      "id": "pos-operatorio",
+      "title": "Pós-operatório",
+      "description": "Para idosos que precisam de apoio e cuidados durante a recuperação após uma cirurgia. A Gaia oferece acolhimento, cuidados 24 horas, alimentação e uma rotina organizada conforme as necessidades do idoso e as orientações dos profissionais de saúde responsáveis.",
+      "href": "/servicos/pos-operatorio/"
     }
   ],
   "individualizedCare": {
     "eyebrow": "ACOLHIMENTO INDIVIDUALIZADO",
     "title": "Cada pessoa idosa é recebida a partir de suas necessidades.",
-    "text1": "A Gaia é uma residência para idosos e atende moradores com graus de dependência I, II e III. A casa está preparada para avaliar o acolhimento de idosos independentes ou que convivam com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer e outras condições.",
-    "text2": "Cada possibilidade de acolhimento é conversada individualmente com a família, para compreender a história, a rotina e as necessidades de cuidado do futuro morador."
+    "text1": "A Gaia é uma residência para idosos e atende moradores com graus de dependência I, II e III. A casa está preparada para o acolhimento de idosos independentes ou que convivam com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer, doença de Parkinson e outras condições.",
+    "text2": "Cada acolhimento é conversado individualmente com a família, para compreender a história, a rotina e as necessidades de cuidado do futuro morador."
   },
   "familySupport": {
     "eyebrow": "APOIO À FAMÍLIA",
@@ -130,8 +137,7 @@
           "Visita médica mensal, incluindo receitas e registros de evolução.",
           "Serviço de telemedicina disponível ao longo do mês.",
           "Programa de hidratação.",
-          "Prontuário eletrônico.",
-          "Ambulância para transporte em situações de urgência e emergência."
+          "Prontuário eletrônico."
         ]
       },
       {
@@ -208,19 +214,23 @@
       {
         "step": "3",
         "title": "Defina a modalidade",
-        "text": "Longa permanência, moradia temporária ou centro-dia são avaliados conforme o momento da família, as necessidades e a adaptação da pessoa idosa."
+        "text": "Longa permanência, moradia temporária, centro-dia ou pós-operatório são definidos conforme o momento da família e as necessidades da pessoa idosa."
       },
       {
         "step": "4",
         "title": "Planeje a chegada",
-        "text": "Após a definição do formato e a avaliação individual, a equipe alinha com a família os próximos passos para uma chegada acolhedora."
+        "text": "Após a definição do formato, a equipe alinha com a família os próximos passos para uma chegada acolhedora."
       }
     ]
   },
   "faq": [
     {
       "question": "Quais modalidades a Gaia oferece?",
-      "answer": "A Gaia oferece moradia de longa permanência, moradia temporária e centro-dia para pessoas idosas."
+      "answer": "A Gaia oferece longa permanência, moradia temporária, centro-dia e apoio pós-operatório para pessoas idosas."
+    },
+    {
+      "question": "A Gaia oferece apoio para idosos no pós-operatório?",
+      "answer": "Sim. A Gaia acolhe idosos que necessitam de apoio e cuidados durante a recuperação após uma cirurgia. O cuidado é organizado conforme as necessidades do idoso e as orientações dos profissionais de saúde responsáveis."
     },
     {
       "question": "Como a família escolhe a modalidade?",
@@ -228,19 +238,19 @@
     },
     {
       "question": "Quem pode morar na Gaia?",
-      "answer": "A Gaia é uma residência para idosos e acolhe moradores com diferentes necessidades e graus de dependência. Cada caso passa por uma avaliação individual, realizada em conjunto com a família, antes do acolhimento."
+      "answer": "A Gaia é uma residência para idosos e acolhe moradores com diferentes necessidades e graus de dependência. Cada acolhimento é conversado individualmente com a família para compreender a rotina e as necessidades de cuidado do futuro morador."
     },
     {
       "question": "Quais graus de dependência são atendidos?",
-      "answer": "A Gaia atende pessoas idosas com graus de dependência I, II e III, sempre considerando as necessidades individuais e a avaliação realizada antes do acolhimento."
+      "answer": "A Gaia atende pessoas idosas com graus de dependência I, II e III, sempre considerando as necessidades individuais de cada morador."
     },
     {
       "question": "A Gaia pode acolher idosos com Alzheimer, demência ou outras condições?",
-      "answer": "A Gaia pode avaliar o acolhimento de idosos com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer e outras condições. Cada caso é analisado individualmente para compreender as necessidades do futuro morador e garantir o cuidado adequado."
+      "answer": "Sim. A Gaia acolhe idosos com limitações de locomoção, esquizofrenia, demências, doença de Alzheimer, doença de Parkinson e outras condições. Cada acolhimento é conversado individualmente com a família para compreender a história, a rotina e as necessidades de cuidado do futuro morador."
     },
     {
       "question": "É possível permanecer na Gaia somente durante uma viagem da família?",
-      "answer": "Sim. A moradia temporária permite permanências por alguns dias ou semanas, conforme a necessidade da família, a avaliação individual e a disponibilidade da Gaia."
+      "answer": "Sim. A moradia temporária permite permanências por alguns dias ou semanas, conforme a necessidade da família e a disponibilidade da Gaia."
     },
     {
       "question": "É possível frequentar a Gaia apenas alguns dias por semana?",
@@ -265,10 +275,6 @@
     {
       "question": "Quais acomodações estão disponíveis?",
       "answer": "A casa possui suítes individuais e quartos individuais ou duplos. A disponibilidade é confirmada durante o contato com a família."
-    },
-    {
-      "question": "Os valores aparecem no site?",
-      "answer": "Não. Os valores e as condições de cada modalidade são apresentados durante a conversa com a família."
     }
   ],
   "contactSection": {

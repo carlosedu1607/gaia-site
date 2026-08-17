@@ -82,9 +82,45 @@ const structuredData = {
       target="_blank"
       rel="noreferrer"
       aria-label="Falar com a Gaia pelo WhatsApp"
-      data-event="whatsapp_float"
+      data-event="floating_whatsapp"
     >
       <img src="/icons/whatsapp-enviado.png" alt="" aria-hidden="true" width="58" height="58" />
     </a>
+
+    <script is:inline>
+      document.addEventListener("click", function (event) {
+        var target = event.target;
+        if (!target) return;
+        var link = target.closest("a[href*='wa.me'], a[data-event*='whatsapp']");
+        if (!link) return;
+
+        var buttonId = link.getAttribute("data-event") || "whatsapp_link";
+        var params = new URLSearchParams(window.location.search);
+        var payload = {
+          buttonId: buttonId,
+          sourcePage: window.location.pathname,
+          referrer: document.referrer || "",
+          utmSource: params.get("utm_source") || "",
+          utmMedium: params.get("utm_medium") || "",
+          utmCampaign: params.get("utm_campaign") || "",
+          utmContent: params.get("utm_content") || ""
+        };
+
+        var url = "/api/whatsapp-click";
+        var body = JSON.stringify(payload);
+
+        if (navigator.sendBeacon) {
+          var blob = new Blob([body], { type: "application/json" });
+          navigator.sendBeacon(url, blob);
+        } else if (window.fetch) {
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: body,
+            keepalive: true
+          }).catch(function () {});
+        }
+      });
+    </script>
   </body>
 </html>
