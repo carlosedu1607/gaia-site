@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Gallery from "../components/Gallery.astro";
+import StructureGrid from "../components/StructureGrid.astro";
 import Services from "../components/Services.astro";
 import ContactForm from "../components/ContactForm.astro";
 import pages from "../content/pages.json";
@@ -31,7 +31,7 @@ const { page } = Astro.props as { page: PageData };
   </header>
 
   {page.slug === "servicos" && <Services />}
-  {page.slug === "estrutura" && <Gallery />}
+  {page.slug === "estrutura" && <StructureGrid />}
 
   {page.sections.length > 0 && (
     <section class="section">

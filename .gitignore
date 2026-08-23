@@ -6,3 +6,10 @@ dist/
 .env
 .DS_Store
 npm-debug.log*
+
+# Arquivos locais e temporários
+scratch/
+docs/Fotos Novas Gaia/
+docs/estrutura-*.png
+docs/footer-*.png
+docs/instagram-cta-*.png

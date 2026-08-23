@@ -2,75 +2,8 @@
   "enabled": true,
   "eyebrow": "NOSSO DIA A DIA",
   "title": "Acompanhe a Gaia no Instagram",
-  "description": "Momentos da rotina, atividades e ambientes da Gaia.",
+  "description": "Siga o perfil oficial da Gaia e acompanhe momentos da rotina, atividades e ambientes da casa.",
+  "buttonText": "Seguir a Gaia no Instagram",
   "profileHandle": "@gaiaresidenciaparaidosos",
-  "profileUrl": "https://www.instagram.com/gaiaresidenciaparaidosos/",
-  "posts": [
-    {
-      "id": "post-arte",
-      "type": "image",
-      "image": "/media/instagram/insta-arte-pintura.jpg",
-      "alt": "Oficina de pintura e aquarela na Gaia.",
-      "caption": "Momento de arte e expressão: a pintura estimula a criatividade, a concentração e a alegria compartilhada.",
-      "permalink": "https://www.instagram.com/gaiaresidenciaparaidosos/",
-      "publishedAt": "2026-08-14",
-      "authorized": true,
-      "reviewStatus": "approved"
-    },
-    {
-      "id": "post-jardim",
-      "type": "carousel",
-      "image": "/media/instagram/insta-jardim-flores.jpg",
-      "alt": "Jardinagem e flores no jardim da Gaia.",
-      "caption": "Cuidando com carinho do nosso jardim. O contato diário com a natureza faz parte da nossa rotina de bem-estar.",
-      "permalink": "https://www.instagram.com/gaiaresidenciaparaidosos/",
-      "publishedAt": "2026-08-12",
-      "authorized": true,
-      "reviewStatus": "approved"
-    },
-    {
-      "id": "post-musica",
-      "type": "reel",
-      "image": "/media/instagram/insta-musica-violao.jpg",
-      "alt": "Sessão de música e violão na sala de convivência.",
-      "caption": "Tarde de música e convivência: melodias que resgatam memórias afetivas e aquecem o coração.",
-      "permalink": "https://www.instagram.com/gaiaresidenciaparaidosos/",
-      "publishedAt": "2026-08-10",
-      "authorized": true,
-      "reviewStatus": "approved"
-    },
-    {
-      "id": "post-lanche",
-      "type": "image",
-      "image": "/media/instagram/insta-lanche-saudavel.jpg",
-      "alt": "Mesa de café da tarde e frutas frescas.",
-      "caption": "Lanche da tarde preparado com carinho: nutrição equilibrada, frutas frescas e sabor de casa.",
-      "permalink": "https://www.instagram.com/gaiaresidenciaparaidosos/",
-      "publishedAt": "2026-08-08",
-      "authorized": true,
-      "reviewStatus": "approved"
-    },
-    {
-      "id": "post-leitura",
-      "type": "image",
-      "image": "/media/instagram/insta-leitura-aconchego.jpg",
-      "alt": "Espaço de leitura e descanso junto à janela.",
-      "caption": "Um cantinho tranquilo e iluminado para leitura, descanso e boas histórias nas tardes de outono.",
-      "permalink": "https://www.instagram.com/gaiaresidenciaparaidosos/",
-      "publishedAt": "2026-08-05",
-      "authorized": true,
-      "reviewStatus": "approved"
-    },
-    {
-      "id": "post-jogos",
-      "type": "carousel",
-      "image": "/media/instagram/insta-jogos-convivio.jpg",
-      "alt": "Jogos de xadrez e quebra-cabeça na mesa de convivência.",
-      "caption": "Estímulo cognitivo e integração: jogos de tabuleiro e desafios que movimentam a mente e fortalecem vínculos.",
-      "permalink": "https://www.instagram.com/gaiaresidenciaparaidosos/",
-      "publishedAt": "2026-08-01",
-      "authorized": true,
-      "reviewStatus": "approved"
-    }
-  ]
+  "profileUrl": "https://www.instagram.com/gaiaresidenciaparaidosos/"
 }

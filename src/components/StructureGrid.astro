@@ -1,0 +1,232 @@
+---
+import media from "../content/media.json";
+const enabledMedia = media.filter((item) => item.enabled);
+---
+
+<section class="section structure-gallery-section" id="todas-fotos">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Galeria completa</p>
+        <h2>Conheça todos os ambientes</h2>
+      </div>
+      <p>Clique em qualquer imagem para abrir a visualização ampliada e navegar por todos os espaços da Gaia.</p>
+    </div>
+
+    <div class="structure-grid" role="region" aria-label="Grade de fotos da estrutura da Gaia">
+      {enabledMedia.map((item, index) => (
+        <button
+          type="button"
+          class="structure-card-item"
+          data-lightbox-trigger
+          data-index={index}
+          aria-label={`Ampliar foto: ${item.caption} (${index + 1} de ${enabledMedia.length})`}
+        >
+          <div class="structure-media-wrap">
+            <picture>
+              <source media="(max-width: 800px)" srcset={item.src800} />
+              <img
+                src={item.src800}
+                alt={item.alt}
+                width="800"
+                height="560"
+                loading={index < 6 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </picture>
+            <div class="zoom-indicator" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+          <span class="structure-caption">{item.caption}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal Acessível -->
+<div
+  class="lightbox-overlay"
+  id="lightbox-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Visualização ampliada da imagem"
+  hidden
+>
+  <div class="lightbox-backdrop" data-lightbox-backdrop></div>
+
+  <div class="lightbox-container">
+    <header class="lightbox-header">
+      <div class="lightbox-info">
+        <span class="lightbox-counter" data-lightbox-counter>1 de 24</span>
+        <span class="lightbox-title" data-lightbox-title>Entrada principal</span>
+      </div>
+      <button type="button" class="lightbox-close-btn" data-lightbox-close aria-label="Fechar galeria">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+
+    <div class="lightbox-body">
+      <div class="lightbox-figure-wrap" data-lightbox-touch-area>
+        <img class="lightbox-main-img" data-lightbox-main-img src="" alt="" />
+
+        <button type="button" class="lightbox-nav-btn lightbox-prev-btn" data-lightbox-prev aria-label="Imagem anterior">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <button type="button" class="lightbox-nav-btn lightbox-next-btn" data-lightbox-next aria-label="Próxima imagem">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ mediaList: enabledMedia }}>
+  (function () {
+    const modal = document.getElementById("lightbox-modal");
+    const backdrop = document.querySelector("[data-lightbox-backdrop]");
+    const closeBtn = document.querySelector("[data-lightbox-close]");
+    const prevBtn = document.querySelector("[data-lightbox-prev]");
+    const nextBtn = document.querySelector("[data-lightbox-next]");
+    const mainImg = document.querySelector("[data-lightbox-main-img]");
+    const counter = document.querySelector("[data-lightbox-counter]");
+    const title = document.querySelector("[data-lightbox-title]");
+    const touchArea = document.querySelector("[data-lightbox-touch-area]");
+    const triggers = document.querySelectorAll("[data-lightbox-trigger]");
+
+    if (!modal || !mainImg || !triggers.length) return;
+
+    let currentIndex = 0;
+    let lastActiveElement = null;
+
+    function preloadAdjacent(index) {
+      const nextIdx = (index + 1) % mediaList.length;
+      const prevIdx = (index - 1 + mediaList.length) % mediaList.length;
+      const img1 = new Image();
+      img1.src = mediaList[nextIdx].src1600 || mediaList[nextIdx].src800;
+      const img2 = new Image();
+      img2.src = mediaList[prevIdx].src1600 || mediaList[prevIdx].src800;
+    }
+
+    function updateView(index) {
+      currentIndex = index;
+      const item = mediaList[currentIndex];
+      if (!item) return;
+
+      mainImg.src = item.src1600 || item.src800;
+      mainImg.alt = item.alt || item.caption;
+      if (counter) counter.textContent = `${currentIndex + 1} de ${mediaList.length}`;
+      if (title) title.textContent = item.caption;
+
+      preloadAdjacent(currentIndex);
+    }
+
+    function openLightbox(index) {
+      lastActiveElement = document.activeElement;
+      updateView(index);
+      modal.hidden = false;
+      modal.classList.add("is-active");
+      document.body.style.overflow = "hidden";
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      modal.classList.remove("is-active");
+      modal.hidden = true;
+      document.body.style.overflow = "";
+      if (mainImg) mainImg.src = "";
+      if (lastActiveElement && typeof lastActiveElement.focus === "function") {
+        lastActiveElement.focus();
+      }
+    }
+
+    function showNext() {
+      const newIndex = (currentIndex + 1) % mediaList.length;
+      updateView(newIndex);
+    }
+
+    function showPrev() {
+      const newIndex = (currentIndex - 1 + mediaList.length) % mediaList.length;
+      updateView(newIndex);
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const index = parseInt(trigger.getAttribute("data-index") || "0", 10);
+        openLightbox(index);
+      });
+    });
+
+    closeBtn?.addEventListener("click", closeLightbox);
+    backdrop?.addEventListener("click", closeLightbox);
+    nextBtn?.addEventListener("click", showNext);
+    prevBtn?.addEventListener("click", showPrev);
+
+    // Teclado
+    document.addEventListener("keydown", (e) => {
+      if (modal.hidden) return;
+
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeLightbox();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        showNext();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        showPrev();
+      } else if (e.key === "Tab") {
+        // Focus trap
+        const focusable = modal.querySelectorAll("button:not([disabled])");
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last?.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first?.focus();
+        }
+      }
+    });
+
+    // Touch swipe
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    touchArea?.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    touchArea?.addEventListener("touchend", (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Ensure horizontal swipe is dominant and exceeds threshold
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          showNext();
+        } else {
+          showPrev();
+        }
+      }
+    }, { passive: true });
+  })();
+</script>

@@ -1,90 +1,209 @@
 [
   {
-    "id": "entrada-gaia-101",
-    "src800": "/media/site/entrada-gaia-101-2026.jpeg",
-    "src1600": "/media/site/entrada-gaia-101-2026.jpeg",
-    "alt": "Entrada da Gaia Vida Ainda na Rua do Amapá, 101, em Curitiba.",
-    "caption": "Entrada da Gaia",
-    "category": "fachada",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "fotografia de 2026 da entrada com placa e número 101"
-  },
-  {
-    "id": "fachada-lateral-jardim",
-    "src800": "/media/site/fachada-lateral-jardim-2026.jpeg",
-    "src1600": "/media/site/fachada-lateral-jardim-2026.jpeg",
-    "alt": "Fachada lateral da Gaia com jardim e céu aberto.",
-    "caption": "Fachada e jardim",
-    "category": "fachada",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "fotografia de 2026 da fachada lateral e gramado"
-  },
-  {
-    "id": "fachada-frontal-jardim",
-    "src800": "/media/site/fachada-frontal-jardim-2026.jpeg",
-    "src1600": "/media/site/fachada-frontal-jardim-2026.jpeg",
-    "alt": "Fachada frontal da Gaia e seu jardim.",
-    "caption": "Fachada frontal",
-    "category": "fachada",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "fotografia de 2026 da fachada frontal e jardim"
-  },
-  {
-    "id": "fachada",
-    "src800": "/media/site/fachada-800.webp",
-    "src1600": "/media/site/fachada-1600.webp",
-    "alt": "Fachada atual da Gaia Vida Ainda no bairro Vista Alegre, em Curitiba",
+    "id": "fachada-1",
+    "src800": "/media/site/novas/fachada-1-800.webp",
+    "src1600": "/media/site/novas/fachada-1-1600.webp",
+    "alt": "Fachada da Gaia Vida Ainda em Curitiba.",
     "caption": "Fachada da Gaia",
     "category": "fachada",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "confirmar se esta continua sendo a melhor foto principal"
+    "enabled": true
   },
   {
-    "id": "patio",
-    "src800": "/media/site/patio-800.webp",
-    "src1600": "/media/site/patio-1600.webp",
-    "alt": "Pátio externo da Gaia com mesas, circulação e área de convivência",
-    "caption": "Área externa e convivência",
+    "id": "fachada-3",
+    "src800": "/media/site/novas/fachada-3-800.webp",
+    "src1600": "/media/site/novas/fachada-3-1600.webp",
+    "alt": "Fachada da Gaia e área verde.",
+    "caption": "Fachada e área verde",
+    "category": "fachada",
+    "enabled": true
+  },
+  {
+    "id": "fachada-4",
+    "src800": "/media/site/novas/fachada-4-800.webp",
+    "src1600": "/media/site/novas/fachada-4-1600.webp",
+    "alt": "Fachada e jardim frontal da Gaia.",
+    "caption": "Fachada frontal e jardim",
+    "category": "fachada",
+    "enabled": true
+  },
+  {
+    "id": "entrada-gaia",
+    "src800": "/media/site/novas/entrada-gaia-800.webp",
+    "src1600": "/media/site/novas/entrada-gaia-1600.webp",
+    "alt": "Entrada principal da Gaia Vida Ainda.",
+    "caption": "Entrada principal",
+    "category": "fachada",
+    "enabled": true
+  },
+  {
+    "id": "jardim-1",
+    "src800": "/media/site/novas/jardim-1-800.webp",
+    "src1600": "/media/site/novas/jardim-1-1600.webp",
+    "alt": "Jardim da Gaia com fonte e área gramada.",
+    "caption": "Jardim com fonte",
     "category": "area-externa",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "confirmar atualidade do ambiente"
+    "enabled": true
   },
   {
-    "id": "sala",
-    "src800": "/media/site/sala-800.webp",
-    "src1600": "/media/site/sala-1600.webp",
-    "alt": "Sala de convivência da Gaia com sofás e poltronas",
-    "caption": "Sala de convivência",
+    "id": "jardim-2",
+    "src800": "/media/site/novas/jardim-2-800.webp",
+    "src1600": "/media/site/novas/jardim-2-1600.webp",
+    "alt": "Fonte e jardim da área externa da Gaia.",
+    "caption": "Fonte e jardim externo",
+    "category": "area-externa",
+    "enabled": true
+  },
+  {
+    "id": "jardim-3",
+    "src800": "/media/site/novas/jardim-3-800.webp",
+    "src1600": "/media/site/novas/jardim-3-1600.webp",
+    "alt": "Jardim com banco e espaço de convivência ao ar livre.",
+    "caption": "Jardim e convivência ao ar livre",
+    "category": "area-externa",
+    "enabled": true
+  },
+  {
+    "id": "area-externa-1",
+    "src800": "/media/site/novas/area-externa-1-800.webp",
+    "src1600": "/media/site/novas/area-externa-1-1600.webp",
+    "alt": "Área externa da Gaia com painel artístico.",
+    "caption": "Área externa com painel",
+    "category": "area-externa",
+    "enabled": true
+  },
+  {
+    "id": "area-externa-2",
+    "src800": "/media/site/novas/area-externa-2-800.webp",
+    "src1600": "/media/site/novas/area-externa-2-1600.webp",
+    "alt": "Área externa da Gaia com banco para descanso.",
+    "caption": "Área externa para descanso",
+    "category": "area-externa",
+    "enabled": true
+  },
+  {
+    "id": "area-externa-3",
+    "src800": "/media/site/novas/area-externa-3-800.webp",
+    "src1600": "/media/site/novas/area-externa-3-1600.webp",
+    "alt": "Pátio externo arborizado com mesa e cadeiras.",
+    "caption": "Pátio arborizado",
+    "category": "area-externa",
+    "enabled": true
+  },
+  {
+    "id": "sala-convivencia-1",
+    "src800": "/media/site/novas/sala-convivencia-1-800.webp",
+    "src1600": "/media/site/novas/sala-convivencia-1-1600.webp",
+    "alt": "Sala de convivência ampla e iluminada.",
+    "caption": "Sala de convivência ampla",
     "category": "area-interna",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "confirmar atualidade do ambiente"
+    "enabled": true
   },
   {
-    "id": "quarto-duplo",
-    "src800": "/media/site/quarto-duplo-800.webp",
-    "src1600": "/media/site/quarto-duplo-1600.webp",
-    "alt": "Quarto duplo da Gaia com duas camas e armário",
-    "caption": "Acomodação dupla",
-    "category": "quarto",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "confirmar itens oferecidos e categoria do quarto"
+    "id": "sala-convivencia-2",
+    "src800": "/media/site/novas/sala-convivencia-2-800.webp",
+    "src1600": "/media/site/novas/sala-convivencia-2-1600.webp",
+    "alt": "Ambiente interno de convivência da Gaia.",
+    "caption": "Ambiente de convivência",
+    "category": "area-interna",
+    "enabled": true
   },
   {
-    "id": "banheiro-acessivel",
+    "id": "sala-convivencia-3-piano",
+    "src800": "/media/site/novas/sala-convivencia-3-piano-800.webp",
+    "src1600": "/media/site/novas/sala-convivencia-3-piano-1600.webp",
+    "alt": "Sala de convivência da Gaia com piano.",
+    "caption": "Espaço de convivência com piano",
+    "category": "area-interna",
+    "enabled": true
+  },
+  {
+    "id": "sala-estar",
+    "src800": "/media/site/novas/sala-estar-800.webp",
+    "src1600": "/media/site/novas/sala-estar-1600.webp",
+    "alt": "Sala de estar da Gaia.",
+    "caption": "Sala de estar",
+    "category": "area-interna",
+    "enabled": true
+  },
+  {
+    "id": "refeitorio",
+    "src800": "/media/site/novas/refeitorio-800.webp",
+    "src1600": "/media/site/novas/refeitorio-1600.webp",
+    "alt": "Refeitório amplo e iluminado da Gaia.",
+    "caption": "Refeitório",
+    "category": "area-interna",
+    "enabled": true
+  },
+  {
+    "id": "elevador",
+    "src800": "/media/site/novas/elevador-800.webp",
+    "src1600": "/media/site/novas/elevador-1600.webp",
+    "alt": "Elevador com recurso de acessibilidade da Gaia.",
+    "caption": "Elevador e acessibilidade",
+    "category": "acessibilidade",
+    "enabled": true
+  },
+  {
+    "id": "banheiro-acessivel-preservado",
     "src800": "/media/site/banheiro-acessivel-800.webp",
     "src1600": "/media/site/banheiro-acessivel-1600.webp",
     "alt": "Banheiro da Gaia equipado com barras de apoio e cadeira de banho",
     "caption": "Banheiro com recursos de apoio",
     "category": "acessibilidade",
-    "enabled": true,
-    "authorization": "sem pessoas identificáveis",
-    "review": "validar quais recursos de acessibilidade podem ser divulgados"
+    "enabled": true
+  },
+  {
+    "id": "quarto-individual-1",
+    "src800": "/media/site/novas/quarto-individual-1-800.webp",
+    "src1600": "/media/site/novas/quarto-individual-1-1600.webp",
+    "alt": "Quarto individual da Gaia.",
+    "caption": "Quarto individual",
+    "category": "quarto",
+    "enabled": true
+  },
+  {
+    "id": "quarto-individual-2",
+    "src800": "/media/site/novas/quarto-individual-2-800.webp",
+    "src1600": "/media/site/novas/quarto-individual-2-1600.webp",
+    "alt": "Acomodação individual da Gaia.",
+    "caption": "Acomodação individual",
+    "category": "quarto",
+    "enabled": true
+  },
+  {
+    "id": "quarto-duplo-1-a",
+    "src800": "/media/site/novas/quarto-duplo-1-a-800.webp",
+    "src1600": "/media/site/novas/quarto-duplo-1-a-1600.webp",
+    "alt": "Quarto duplo da Gaia visto pela entrada.",
+    "caption": "Quarto duplo",
+    "category": "quarto",
+    "enabled": true
+  },
+  {
+    "id": "quarto-duplo-1-b",
+    "src800": "/media/site/novas/quarto-duplo-1-b-800.webp",
+    "src1600": "/media/site/novas/quarto-duplo-1-b-1600.webp",
+    "alt": "Espaço de convivência do quarto duplo.",
+    "caption": "Quarto duplo — convivência",
+    "category": "quarto",
+    "enabled": true
+  },
+  {
+    "id": "quarto-duplo-1-c",
+    "src800": "/media/site/novas/quarto-duplo-1-c-800.webp",
+    "src1600": "/media/site/novas/quarto-duplo-1-c-1600.webp",
+    "alt": "Outro ângulo do quarto duplo da Gaia.",
+    "caption": "Quarto duplo — vista interna",
+    "category": "quarto",
+    "enabled": true
+  },
+  {
+    "id": "quarto-duplo-2",
+    "src800": "/media/site/novas/quarto-duplo-2-800.webp",
+    "src1600": "/media/site/novas/quarto-duplo-2-1600.webp",
+    "alt": "Acomodação dupla ampla e iluminada.",
+    "caption": "Acomodação dupla ampla",
+    "category": "quarto",
+    "enabled": true
   }
 ]

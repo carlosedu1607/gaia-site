@@ -4,7 +4,17 @@ import site from "../content/site.json";
 
 <section class="hero">
   <picture class="hero-media">
-    <img src="/media/site/fachada-principal-hero-2026.jpeg" alt="Fachada da Gaia Vida Ainda em Curitiba." width="1280" height="960" fetchpriority="high" />
+    <source media="(max-width: 640px)" srcset="/media/site/hero-fachada-2-800.webp" />
+    <source media="(max-width: 1080px)" srcset="/media/site/hero-fachada-2-1280.webp" />
+    <img
+      src="/media/site/hero-fachada-2-1920.webp"
+      alt="Fachada da Gaia Vida Ainda, residência para idosos em Curitiba."
+      width="1920"
+      height="1080"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+    />
   </picture>
   <div class="hero-overlay"></div>
   <div class="container hero-content">

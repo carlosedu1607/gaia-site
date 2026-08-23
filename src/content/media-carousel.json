@@ -1,0 +1,90 @@
+[
+  {
+    "id": "fachada-1",
+    "src800": "/media/site/novas/fachada-1-800.webp",
+    "src1600": "/media/site/novas/fachada-1-1600.webp",
+    "alt": "Fachada da Gaia Vida Ainda em Curitiba.",
+    "caption": "Fachada da Gaia",
+    "enabled": true
+  },
+  {
+    "id": "entrada-gaia",
+    "src800": "/media/site/novas/entrada-gaia-800.webp",
+    "src1600": "/media/site/novas/entrada-gaia-1600.webp",
+    "alt": "Entrada principal da Gaia Vida Ainda.",
+    "caption": "Entrada principal",
+    "enabled": true
+  },
+  {
+    "id": "jardim-1",
+    "src800": "/media/site/novas/jardim-1-800.webp",
+    "src1600": "/media/site/novas/jardim-1-1600.webp",
+    "alt": "Jardim da Gaia com fonte e área gramada.",
+    "caption": "Jardim com fonte",
+    "enabled": true
+  },
+  {
+    "id": "area-externa-3",
+    "src800": "/media/site/novas/area-externa-3-800.webp",
+    "src1600": "/media/site/novas/area-externa-3-1600.webp",
+    "alt": "Pátio externo arborizado com mesa e cadeiras.",
+    "caption": "Pátio arborizado",
+    "enabled": true
+  },
+  {
+    "id": "sala-convivencia-3-piano",
+    "src800": "/media/site/novas/sala-convivencia-3-piano-800.webp",
+    "src1600": "/media/site/novas/sala-convivencia-3-piano-1600.webp",
+    "alt": "Sala de convivência da Gaia com piano.",
+    "caption": "Espaço de convivência com piano",
+    "enabled": true
+  },
+  {
+    "id": "refeitorio",
+    "src800": "/media/site/novas/refeitorio-800.webp",
+    "src1600": "/media/site/novas/refeitorio-1600.webp",
+    "alt": "Refeitório amplo e iluminado da Gaia.",
+    "caption": "Refeitório",
+    "enabled": true
+  },
+  {
+    "id": "elevador",
+    "src800": "/media/site/novas/elevador-800.webp",
+    "src1600": "/media/site/novas/elevador-1600.webp",
+    "alt": "Elevador com recurso de acessibilidade da Gaia.",
+    "caption": "Elevador e acessibilidade",
+    "enabled": true
+  },
+  {
+    "id": "banheiro-acessivel-preservado",
+    "src800": "/media/site/banheiro-acessivel-800.webp",
+    "src1600": "/media/site/banheiro-acessivel-1600.webp",
+    "alt": "Banheiro da Gaia equipado com barras de apoio e cadeira de banho",
+    "caption": "Banheiro com recursos de apoio",
+    "enabled": true
+  },
+  {
+    "id": "quarto-individual-1",
+    "src800": "/media/site/novas/quarto-individual-1-800.webp",
+    "src1600": "/media/site/novas/quarto-individual-1-1600.webp",
+    "alt": "Quarto individual da Gaia.",
+    "caption": "Quarto individual",
+    "enabled": true
+  },
+  {
+    "id": "quarto-duplo-1-a",
+    "src800": "/media/site/novas/quarto-duplo-1-a-800.webp",
+    "src1600": "/media/site/novas/quarto-duplo-1-a-1600.webp",
+    "alt": "Quarto duplo da Gaia visto pela entrada.",
+    "caption": "Quarto duplo",
+    "enabled": true
+  },
+  {
+    "id": "quarto-duplo-2",
+    "src800": "/media/site/novas/quarto-duplo-2-800.webp",
+    "src1600": "/media/site/novas/quarto-duplo-2-1600.webp",
+    "alt": "Acomodação dupla ampla e iluminada.",
+    "caption": "Acomodação dupla ampla",
+    "enabled": true
+  }
+]
