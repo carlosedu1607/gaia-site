@@ -28,6 +28,10 @@ const reviewMode = import.meta.env.PUBLIC_REVIEW_MODE === "true";
           <a href={`https://wa.me/${site.contact.whatsappDigits}`} target="_blank" rel="noreferrer" data-event="contact_list_whatsapp">{site.contact.whatsappDisplay}</a>
         </li>
         <li>
+          <strong>E-mail</strong>
+          <a href={`mailto:${site.contact.currentEmail}`}>{site.contact.currentEmail}</a>
+        </li>
+        <li>
           <strong>Endereço</strong>
           <a href={site.contact.mapsUrl} target="_blank" rel="noreferrer">{site.contact.fullAddress}</a>
         </li>
