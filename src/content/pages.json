@@ -11,7 +11,10 @@
       },
       {
         "title": "Experiência que cuida de cada história",
-        "text": "São décadas de experiência dedicadas ao cuidado, à convivência e ao respeito à individualidade de cada morador. Cada pessoa chega com sua própria trajetória, seus hábitos e suas necessidades. Por isso, o cuidado é organizado de forma individualizada, unindo a experiência construída ao longo dos anos com uma rotina acolhedora, segura e próxima das famílias."
+        "paragraphs": [
+          "São décadas de experiência dedicadas ao cuidado, à convivência e ao respeito à individualidade de cada morador.",
+          "Cada pessoa chega com sua própria trajetória, seus hábitos e suas necessidades. Por isso, o cuidado é organizado de forma individualizada, unindo a experiência construída ao longo dos anos com uma rotina acolhedora, segura e próxima das famílias."
+        ]
       }
     ]
   },

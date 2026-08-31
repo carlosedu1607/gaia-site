@@ -10,12 +10,18 @@ export function getStaticPaths() {
   return pages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
 }
 
+interface SectionData {
+  title: string;
+  text?: string;
+  paragraphs?: string[];
+}
+
 interface PageData {
   slug: string;
   title: string;
   eyebrow: string;
   description: string;
-  sections: Array<{ title: string; text: string }>;
+  sections: Array<SectionData>;
 }
 
 const { page } = Astro.props as { page: PageData };
@@ -37,7 +43,14 @@ const { page } = Astro.props as { page: PageData };
     <section class="section">
       <div class="container content-grid">
         {page.sections.map((section) => (
-          <article class="content-card"><h2>{section.title}</h2><p>{section.text}</p></article>
+          <article class="content-card">
+            <h2>{section.title}</h2>
+            {section.paragraphs ? (
+              section.paragraphs.map((p) => <p>{p}</p>)
+            ) : (
+              <p>{section.text}</p>
+            )}
+          </article>
         ))}
       </div>
     </section>
